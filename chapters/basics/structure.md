@@ -2,7 +2,7 @@
 
 The following information is biased. But in a good way, I think. I'm going to tell you how to structure the directories in your project. This is based on convention, but will help you:
 
-* Easily read other projects following the same patters,
+* Easily read other projects following the same patterns,
 * Avoid a pattern that causes conflicts,
 * Keep from muddling and complicating your build.
 
