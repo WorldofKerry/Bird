@@ -32,12 +32,12 @@ A related feature, [`WriteCompilerDetectionHeader`](https://cmake.org/cmake/help
 There is another way that C++ standards are supported; a specific set of three properties (both global and target level). The global properties are:
 
 ```cmake
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 11 CACHE STRING "The C++ standard to use")
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 ```
 
-The first line sets a C++ standard level, and the second tells CMake to use it, and the final line is optional and ensures `-std=c++11` vs. something like `-std=g++11`. This method isn't bad for a final package, but shouldn't be used by a library. You can also set these values on a target:
+The first line sets a C++ standard level, and the second tells CMake to use it, and the final line is optional and ensures `-std=c++11` vs. something like `-std=g++11`. This method isn't bad for a final package, but shouldn't be used by a library. You should always set this as a cached variable, so you can override it to try a new version easily (or if this gets used as a library, this is the only way to override it - but again, don't use this for libraries). You can also set these values on a target:
 
 ```cmake
 set_target_properties(myTarget PROPERTIES
@@ -47,7 +47,7 @@ set_target_properties(myTarget PROPERTIES
 )
 ```
 
-Which is better, but still doesn't have the sort of explicit control that compiler features have for populating `PRIVATE` and `INTERFACE` properties.
+Which is better, but still doesn't have the sort of explicit control that compiler features have for populating `PRIVATE` and `INTERFACE` properties, so it really is only useful on final targets.
 
 You can find more information about the final two methods on [Craig Scott's useful blog post][crascit].
 

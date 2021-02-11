@@ -29,18 +29,18 @@ Ordered by author preference:
 
 ## Official package
 
-You can [download CMake from KitWare][download]. This is how you will probably get CMake if you are on Windows. It's not a bad way to get it on macOS either, but using `brew install cmake` is much nicer if you use [Homebrew](https://brew.sh) (and you should). You can also get it on most other package managers, such as [Chocolatey](https://chocolatey.org) for Windows or [MacPorts](https://www.macports.org) for macOS.
+You can [download CMake from KitWare][download]. This is how you will probably get CMake if you are on Windows. It's not a bad way to get it on macOS either (and a Universal2 version is supplied supporting both Intel and Apple Silicon), but using `brew install cmake` is much nicer if you use [Homebrew](https://brew.sh) (and you should; Apple even supports Homebrew such as during the Apple Silicon rollout). You can also get it on most other package managers, such as [Chocolatey](https://chocolatey.org) for Windows or [MacPorts](https://www.macports.org) for macOS.
 
 On Linux, there are several options. Kitware provides a [Debian/Ubunutu apt repository][apt], as well as [snap packages][snap]. There are universal Linux binaries provided, but you'll need to pick an install location. If you already use `~/.local` for user-space packages, the following single line command[^1] will get CMake for you [^2]:
 
 {% term %}
-~ $ wget -qO- "https://cmake.org/files/v3.19/cmake-3.19.0-Linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C ~/.local
+~ $ wget -qO- "https://cmake.org/files/v3.19/cmake-3.19.4-Linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C ~/.local
 {% endterm %}
 
 If you just want a local folder with CMake only:
 
 {% term %}
-~ $ mkdir -p cmake-3.19 && wget -qO- "https://cmake.org/files/v3.19/cmake-3.19.0-Linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C cmake-3.19
+~ $ mkdir -p cmake-3.19 && wget -qO- "https://cmake.org/files/v3.19/cmake-3.19.4-Linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C cmake-3.19
 ~ $ export PATH=`pwd`/cmake-3.19/bin:$PATH
 {% endterm %}
 
@@ -49,7 +49,7 @@ You'll obviously want to append to the PATH every time you start a new terminal,
 And, if you want a system install, install to `/usr/local`; this is an excellent choice in a Docker container, for example on GitLab CI. Do not try it on a non-containerized system.
 
 {% term %}
-docker $ wget -qO- "https://cmake.org/files/v3.19/cmake-3.19.0-Linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C /usr/local
+docker $ wget -qO- "https://cmake.org/files/v3.19/cmake-3.19.4-Linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C /usr/local
 {% endterm %}
 
 
@@ -117,7 +117,7 @@ You should only use the default CMake on 18.04+; it's an LTS release with a pret
 [![Conda-forge](https://img.shields.io/conda/vn/conda-forge/cmake.svg)][Conda-Forge]
 [![Anaconda](https://anaconda.org/anaconda/cmake/badges/version.svg?style=flat)][Anaconda]
 
-Just `pip install cmake` on many systems. Add `--user` if you have to (modern pip does this for you if needed).
+Just `pip install cmake` on many systems. Add `--user` if you have to (modern pip does this for you if needed). This does not supply Universal2 wheels yet.
 
 
 ### CI
