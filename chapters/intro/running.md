@@ -34,7 +34,7 @@ Any *one* of these commands will install:
 ~/package $ cmake --install build # CMake 3.15+ only
 {% endterm %}
 
-So set of methods should you use? As long as you *do not forget* to type the build directory as the argument, staying out of the build directory is shorter, and making source changes is easier from the source directory. You should try to get used to using `--build`, as that will free you from using only `make` to build. Note that working from the build directory is historically much more common, and some tools and commands (including CTest) still require running from the build directory.
+So which set of methods should you use? As long as you *do not forget* to type the build directory as the argument, staying out of the build directory is shorter, and making source changes is easier from the source directory. You should try to get used to using `--build`, as that will free you from using only `make` to build. Note that working from the build directory is historically much more common, and some tools and commands (including CTest) still require running from the build directory.
 
 Just to clarify, you can point CMake at either the source directory *from the build directory*, or at an *existing* build directory from anywhere.
 
