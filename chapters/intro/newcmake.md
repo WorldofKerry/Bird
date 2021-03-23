@@ -305,6 +305,21 @@ for permissions. Further support for generator expressions in more places.
 * FindPython: `Python*_LINK_OPTIONS` added
 * `compute-sanitizer` for ctest now supports CUDA for memcheck
 
+## [CMake 3.20][] : ...
+
+The CMake docs received a major boost in productivity by adding "new in" tags
+to quickly see what was added without having to toggle documentation versions!
+C++ 23 support added. Source files must have the extension listed now, and
+LANGUAGE is always respected. Quite a bit of cleanup was done; make sure your
+code is tested with `...3.20` before deploying that as your maximum.
+
+* Support added for C++23
+* CUDAARCHS environment variable for setting CUDA architectures.
+* The new `IntelLLVM` compilers are now supported (OneAPI 2021.1), and `NVHPC` NVIDIA HPC SDK, as well.
+* Some expanded generator expression support in custom commands/targets, install renaming.
+* New `cmake_path` command for working with paths.
+* Several removals, like `cmake-server`, `WriteCompilerDetectionHeader` (if policy set to 3.20+), and a few things that have newer methods now.
+
 
 [Releases]: https://cmake.org/cmake/help/latest/release/index.html
 [CMake 3.0]: https://cmake.org/cmake/help/latest/release/3.0.html
@@ -327,6 +342,7 @@ for permissions. Further support for generator expressions in more places.
 [CMake 3.17]: https://cmake.org/cmake/help/latest/release/3.17.html
 [CMake 3.18]: https://cmake.org/cmake/help/latest/release/3.18.html
 [CMake 3.19]: https://cmake.org/cmake/help/latest/release/3.19.html
+[CMake 3.20]: https://cmake.org/cmake/help/latest/release/3.20.html
 [CMake master]: https://cmake.org/cmake/help/git-master/release/index.html
 [fastercmake]: https://blog.kitware.com/improving-cmakes-runtime-performance/
 
