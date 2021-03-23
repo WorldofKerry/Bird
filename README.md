@@ -7,7 +7,7 @@ Certainly there are no shortage of problems when building.
 But I think that, in 2020, we have a very good solution to quite a few of those problems.
 It's CMake. Not CMake 2.8 though; that was released before C++11 even existed!
 Nor the horrible examples out there for CMake (even those posted on KitWare's own tutorials list).
-I'm talking about Modern CMake. CMake 3.1+, maybe even CMake 3.20+!
+I'm talking about Modern CMake. CMake 3.4+, maybe even CMake 3.20+!
 It's clean, powerful, and elegant, so you can spend most of your time coding, not adding lines to an unreadable, unmaintainable Make (Or CMake 2) file.
 And CMake 3.11+ is supposed to be significantly faster, as well!
 
@@ -62,7 +62,7 @@ And it was a hard, ugly, transition that is still ongoing in some places, even t
 
 I believe that CMake 3 had the bad luck to follow Python 3.[^1]
 Even though every version of CMake is insanely backward compatible, the 3 series was treated as if it were something new.
-And so, you'll find OSs like CentOS7 with GCC 4.8, with almost-complete C++14 support, and CMake 2.8, which came out before C++11.
+And so, you'll find OSs like CentOS7 with GCC 4.8, with almost-complete C++14 support, and CMake 2.8, which came out years before C++11.
 
 You really should *at least* use a version of CMake that came out after your compiler, since it needs to know compiler flags, etc, for that version.
 And, since CMake will dumb itself down to the minimum required version in your CMake file, installing a new CMake, even system wide, is pretty safe.
