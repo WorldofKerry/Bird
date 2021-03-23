@@ -24,8 +24,6 @@ You can ask for specific compiler features to be available. This was more granul
 
 If you have optional features, you can use the list `CMAKE_CXX_COMPILE_FEATURES` and use `if(... IN_LIST ...)` from CMake 3.3+ to see if that feature is supported, and add it conditionally. See [the docs here](https://cmake.org/cmake/help/latest/manual/cmake-compile-features.7.html) for other use cases.
 
-A related feature, [`WriteCompilerDetectionHeader`](https://cmake.org/cmake/help/latest/module/WriteCompilerDetectionHeader.html), is worth checking out. It is a module that lets you make a file with macros allowing you to check and support optional features for specific compilers. Like any header generator, this will require that you build with CMake so that your header can be generated as part of the build process (only important if you care about supporting multiple build systems, or if you are making a no-build header-only library).
-
 
 ## CMake 3.1+: Global and property settings
 
