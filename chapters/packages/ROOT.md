@@ -58,41 +58,54 @@ Find ROOT allows you to specify components. It will add anything you list to `${
 
 ## Dictionary generation
 
-Dictionary generation is ROOT's way of working around the missing reflection feature in C++. It allows ROOT to learn the details of your class so it can save it, show methods in the Cling interpreter, etc. You'll need three things in your source code to make it work for classes:
-
+Dictionary generation is ROOT's way of working around the missing reflection feature in C++. It allows ROOT to learn the details of your class so it can save it, show methods in the Cling interpreter, etc. Your source code will need the following modifications to support dictionary generation:
 * Your class definition should end with `ClassDef(MyClassName, 1)`
 * Your class implementation should have `ClassImp(MyClassName)` in it
-* You should have a file with a name that ends with `LinkDef.h`
 
-The `LinkDef.h` file follows a [specific formula][linkdef-root] and tells ROOT what parts to generate dictionaries for.
+ROOT provides `rootcling` and `genreflex` (a legacy interface to `rootcling`) binaries which produce the source files required to build the dictionary. It also defines `root_generate_dictionary`, a CMake function to invoke `rootcling` during the build process. 
 
-To generate, you should include the following in your CMakeLists:
-
+To load this function, first include the ROOT macros:  
 ```cmake
 include("${ROOT_DIR}/modules/RootNewMacros.cmake")
-
-# Uncomment for ROOT versions than 6.16
-# They break if nothing is in the global include list!
-# include_directories(ROOT_BUG)
+# For ROOT versions than 6.16, things break 
+# if nothing is in the global include list!
+if (${ROOT_VERSION} VERSION_LESS "6.16")
+    include_directories(ROOT_NONEXISTENT_DIRECTORY_HACK)
+endif()
 ```
 
-The second line is due to a bug in the NewMacros file that causes dictionary generation to fail if there is not at least one global include directory or a `inc` folder. Here I'm including a non-existent directory just to make it work. There is no `ROOT_BUG` directory.
+The `if(...)` condition is added to fix a bug in the NewMacros file that causes dictionary generation to fail if there is not at least one global include directory or a `inc` folder. Here I'm including a non-existent directory just to make it work. There is no `ROOT_NONEXISTENT_DIRECTORY_HACK` directory.
 
-To generate a file:
+`rootcling` uses a special header file with a [specific formula][linkdef-root] to determine which parts to generate dictionaries for. The name of this file may have any prefix, but **must** end with `LinkDef.h`. Once you have written this header file, the dictionary generation function can be invoked.
+
+### Manually building the dictionary
+Sometimes, you might want to ask ROOT to generate the dictionary, and then add the source file to your library target yourself. You can call the `root_generate_dictionary` with the name of the dictionary, e.g. `G__Example`, any required header files, and finally the special `LinkDef.h` file, listed after `LINKDEF`:
 
 ```cmake
 root_generate_dictionary(G__Example Example.h LINKDEF ExampleLinkDef.h)
 ```
 
-The final argument, listed after `LINKDEF`, must have a name that ends in `LinkDef.h`. This command will create three files. If you started output name with `G__`, that will be removed from the name, otherwise it will use the name given; this must match the final output library name you will soon be creating. Assuming this is `${NAME}`:
-
-* `${NAME}.cxx`: This file should be included in your sources when you make the library.
+This command will create three files:
+* `${NAME}.cxx`: This file should be included in your sources when you make your library.
 * `lib{NAME}.rootmap` (`G__` prefix removed): The rootmap file in plain text
-* `lib{NAME}_rdict.pcm` (`G__` prefix removed): A ROOT file
+* `lib{NAME}_rdict.pcm` (`G__` prefix removed): A [ROOT pre-compiled module file][]
+The name (`${NAME}`) of the targetthat you must create is determined by the dictionary name; if the dictionary name starts with `G__`, it will be removed. Otherwise, the name is used directly.
 
 The final two output files must sit next to the library output. This is done by checking `CMAKE_LIBRARY_OUTPUT_DIRECTORY` (it will not pick up local target settings). If you have a libdir set but you don't have (global) install locations set, you'll also need to set `ARG_NOINSTALL` to `TRUE`.
 
+### Building the dictionary with an existing target
+Instead of manually adding the generated to your library sources, you can ask ROOT to do this for you by passing a `MODULE` argument. This argument should specify the name of an existing build target:
+
+```cmake
+add_library(Example)
+root_generate_dictionary(G__Example Example.h MODULE Example LINKDEF ExampleLinkDef.h)
+```
+
+The full name of the dictionary (e.g. `G__Example`) should not be identical to the `MODULE` argument. 
+
+
 [linkdef-root]: https://root.cern.ch/selecting-dictionary-entries-linkdefh
+[ROOT pre-compiled module file]: https://inspirehep.net/literature/1413967
 
 ---
 

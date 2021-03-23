@@ -22,6 +22,12 @@ add_library(DictExample SHARED DictExample.cxx DictExample.h G__DictExample.cxx)
 target_include_directories(DictExample PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}")
 target_link_libraries(DictExample PUBLIC ROOT::Core)
 
+## Alternative to add the dictionary to an existing target:
+# add_library(DictExample SHARED DictExample.cxx DictExample.h)
+# target_include_directories(DictExample PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}")
+# target_link_libraries(DictExample PUBLIC ROOT::Core)
+# root_generate_dictionary(G__DictExample DictExample.h MODULE DictExample LINKDEF DictLinkDef.h)
+
 ## [main]
 
 message(STATUS "Found ROOT: ${ROOT_VERSION} at ${ROOT_DIR}")
