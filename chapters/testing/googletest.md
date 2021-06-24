@@ -1,5 +1,7 @@
 # GoogleTest
 
+GoogleTest and GoogleMock are classic options; personally, I personally would recommend Catch2 instead, as GoogleTest heavily follows the Google development philosophy; it drops old compilers very quickly, it assumes users want to live at HEAD, etc. Adding GoogleMock is also often painful - and you need GoogleMock to get matchers, which are a default feature in Catch2 (but not doctest).
+
 ## Submodule method (preferred)
 
 To use this method, just checkout GoogleTest as a submodule:[^1]
