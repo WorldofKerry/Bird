@@ -8,7 +8,7 @@ include(CTest)
 FetchContent_Declare(
   catch
   GIT_REPOSITORY https://github.com/catchorg/Catch2.git
-  GIT_TAG v2.13.0)
+  GIT_TAG v2.13.6)
 
 # CMake 3.14+
 FetchContent_MakeAvailable(catch)
