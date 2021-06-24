@@ -72,12 +72,19 @@ An example of a simple function is as follows:
 
 ```cmake
 function(SIMPLE REQUIRED_ARG)
-    message(STATUS "Simple arguments: ${REQUIRED_ARG}, followed by ${ARGV}")
+    message(STATUS "Simple arguments: ${REQUIRED_ARG}, followed by ${ARGN}")
     set(${REQUIRED_ARG} "From SIMPLE" PARENT_SCOPE)
 endfunction()
 
-simple(This)
+simple(This Foo Bar)
 message("Output: ${This}")
+```
+
+The output would be:
+
+```
+-- Simple arguments: This, followed by Foo;Bar
+Output: From SIMPLE
 ```
 
 If you want positional arguments, they are listed explicitly, and all other arguments are collected in `ARGN` (`ARGV` holds all arguments, even the ones you list). You have to work around the fact that CMake does not have return values by setting variables. In the example above, you can explicitly give a variable name to set.
