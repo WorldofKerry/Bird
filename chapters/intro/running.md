@@ -30,6 +30,7 @@ Any *one* of these commands will install:
 ~/package/build $ cmake --install . # CMake 3.15+ only
 
 # From the source directory (pick one)
+~/package $ make -C build install
 ~/package $ cmake --build build --target install
 ~/package $ cmake --install build # CMake 3.15+ only
 {% endterm %}

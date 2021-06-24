@@ -33,9 +33,9 @@ This is the command line for running clang-tidy, as a list (remember, a semicolo
 
 Here is a simple example of using Clang-Tidy:
 
-```bash
-cmake -S . -B build-tidy -DCMAKE_CXX_CLANG_TIDY="$(which clang-tidy);-fix"
-cmake --build build -j 1
+```term
+~/package # cmake -S . -B build-tidy -DCMAKE_CXX_CLANG_TIDY="$(which clang-tidy);-fix"
+~/package # cmake --build build -j 1
 ```
 
 The `-fix` part is optional, and will modify your source files to try to fix
@@ -66,14 +66,14 @@ include-what-you-use`.  Then, you can pass this into your build without
 modifying the source:
 
 ```term
-build # cmake -S . -B build-iwyu -DCMAKE_CXX_INCLUDE_WHAT_YOU_USE=include-what-you-use
+~/package # cmake -S . -B build-iwyu -DCMAKE_CXX_INCLUDE_WHAT_YOU_USE=include-what-you-use
 ```
 
 Finally, you can collect the output and (optionally) apply the fixes:
 
 ```term
-build # cmake --build build-iwyu 2> iwyu.out
-build # fix_includes.py < iwyu.out
+~/package # cmake --build build-iwyu 2> iwyu.out
+~/package # fix_includes.py < iwyu.out
 ```
 
 (You should check the fixes first, or touch them up after applying!)
