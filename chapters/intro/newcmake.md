@@ -305,20 +305,47 @@ for permissions. Further support for generator expressions in more places.
 * FindPython: `Python*_LINK_OPTIONS` added
 * `compute-sanitizer` for ctest now supports CUDA for memcheck
 
-## [CMake 3.20][] : ...
+## [CMake 3.20][] : Docs
 
 The CMake docs received a major boost in productivity by adding "new in" tags
 to quickly see what was added without having to toggle documentation versions!
 C++ 23 support added. Source files must have the extension listed now, and
 LANGUAGE is always respected. Quite a bit of cleanup was done; make sure your
-code is tested with `...3.20` before deploying that as your maximum.
+code is tested with `...3.20` before deploying that as your maximum. Presets
+continue to be improved.
 
 * Support added for C++23
-* CUDAARCHS environment variable for setting CUDA architectures.
-* The new `IntelLLVM` compilers are now supported (OneAPI 2021.1), and `NVHPC` NVIDIA HPC SDK, as well.
-* Some expanded generator expression support in custom commands/targets, install renaming.
-* New `cmake_path` command for working with paths.
+* CUDAARCHS environment variable for setting CUDA architectures
+* The new `IntelLLVM` compilers are now supported (OneAPI 2021.1), and `NVHPC` NVIDIA HPC SDK, as well
+* Some expanded generator expression support in custom commands/targets, install renaming
+* New `cmake_path` command for working with paths
+* `try_run` now has a `WORKING_DIRECTORY`
+* More features for the `file(GENERATE` command
 * Several removals, like `cmake-server`, `WriteCompilerDetectionHeader` (if policy set to 3.20+), and a few things that have newer methods now.
+* Source files must include the extension
+
+
+## [CMake 3.21][] : Colors
+
+Different message types now have different colors! There's now a nice variable
+to see if you are in the top level project. Lots of continued cleanup and
+specialized new features, such as adding the HIP language and C17 and C23
+support. Presets continue to be improved.
+
+* Preliminary support for MSVC 2022
+* `CMAKE_<LANG_LINKER_LAUNCHER` added for make and ninja
+* HIP added as a language
+* C17 and C23 support added
+* `--instal-prefix <dir>` and `--toolchain <file>` added when running CMake
+* Messages printed are colored by message type!
+* Support for MSYS, including `FindMsys`
+* The `file(` command got several updates, including `EXPAND_TILDE`
+* Support for runtime dependencies and artifacts added to `install`
+* `PROJECT_IS_TOP_LEVEL` and `<PROJECT-NAME>_IS_TOP_LEVEL` finally added
+* Caching improvements for the `find_` commands
+
+
+
 
 
 [Releases]: https://cmake.org/cmake/help/latest/release/index.html
@@ -343,6 +370,7 @@ code is tested with `...3.20` before deploying that as your maximum.
 [CMake 3.18]: https://cmake.org/cmake/help/latest/release/3.18.html
 [CMake 3.19]: https://cmake.org/cmake/help/latest/release/3.19.html
 [CMake 3.20]: https://cmake.org/cmake/help/latest/release/3.20.html
+[CMake 3.21]: https://cmake.org/cmake/help/latest/release/3.21.html
 [CMake master]: https://cmake.org/cmake/help/git-master/release/index.html
 [fastercmake]: https://blog.kitware.com/improving-cmakes-runtime-performance/
 
