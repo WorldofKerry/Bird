@@ -289,6 +289,7 @@ You can now add presets in JSON form, and users will get the preset default.
 like FindPython, have custom support for it.  A lot of new controls were added
 for permissions. Further support for generator expressions in more places.
 
+* Initially released [November 18, 2020](https://blog.kitware.com/cmake-3-19-0-available-for-download/)
 * New [CMake presets files](https://cmake.org/cmake/help/latest/manual/cmake-presets.7.html) now supported - you can set defaults for your project per generator, or you can make User presets. PSA: Please add `CMakeUserPresets.json` to your `.gitignore`, even if you do not use `CMakePresets.json`.
 * CMake now uses the new build system introduced in XCode 12+
 * MSVC for Android now supported
@@ -314,6 +315,7 @@ LANGUAGE is always respected. Quite a bit of cleanup was done; make sure your
 code is tested with `...3.20` before deploying that as your maximum. Presets
 continue to be improved.
 
+* Initially released [March 23, 2021](https://blog.kitware.com/cmake-3-20-0-available-for-download/)
 * Support added for C++23
 * CUDAARCHS environment variable for setting CUDA architectures
 * The new `IntelLLVM` compilers are now supported (OneAPI 2021.1), and `NVHPC` NVIDIA HPC SDK, as well
@@ -332,6 +334,7 @@ to see if you are in the top level project. Lots of continued cleanup and
 specialized new features, such as adding the HIP language and C17 and C23
 support. Presets continue to be improved.
 
+* Initially released [July 14, 2021](https://blog.kitware.com/cmake-3-21-0-available-for-download/)
 * Preliminary support for MSVC 2022
 * `CMAKE_<LANG_LINKER_LAUNCHER` added for make and ninja
 * HIP added as a language
