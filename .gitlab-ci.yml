@@ -13,7 +13,7 @@ test_code:
     - cmake --build build -t test
 
 pages:
-  image: node:10
+  image: node:14-buster
   stage: deploy
   only:
     - master
@@ -22,14 +22,12 @@ pages:
       - node_modules/
   before_script:
     - apt-get update && apt-get install -y calibre calibre-bin libxss1 libasound2
-    - npm install gitbook-cli svgexport
+    - npm install gitbook-cli@2.2.0 svgexport
     - npx gitbook fetch 3.2.3
     - npx gitbook install
   script:
     - npx gitbook build . public
-    - 'sed -i "s/puppeteer.launch();/puppeteer.launch({args: [\"--no-sandbox\"]});/g" node_modules/svgexport/render.js'
-    - npx gitbook pdf . modern-cmake.pdf
-    - cp modern-cmake.pdf public/modern-cmake.pdf
+    - npx gitbook pdf . public/modern-cmake.pdf
   artifacts:
     paths:
       - public
