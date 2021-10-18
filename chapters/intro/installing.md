@@ -11,7 +11,7 @@ If you have a built in copy of CMake, it isn't special or customized for your sy
 Ordered by author preference:
 
 * All
-    - [Pip][PyPI] (official, sometimes delayed slightly)
+    - [Pip][PyPI] (official, often updates same-day)
     - [Anaconda][] / [Conda-Forge][]
 * Windows
     - [Chocolatey][]
@@ -126,9 +126,9 @@ Just `pip install cmake` on many systems. Add `--user` if you have to (modern pi
 |---------------|---------------|-------|
 | [TravisCI Xenial](https://docs.travis-ci.com/user/reference/xenial/#compilers-and-build-toolchain) | 3.12.4 | Mid November 2018 this image became ready for widescale use. |
 | [TravisCI Bionic](https://docs.travis-ci.com/user/reference/bionic/#compilers-and-build-toolchain) | 3.12.4 | Same as Xenial at the moment. |
-| [Azure DevOps 18.04](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted?view=azure-devops#use-a-microsoft-hosted-agent) | 3.17.0 | |
-| [GitHub Actions 18.04](https://github.com/actions/virtual-environments/blob/main/images/linux/Ubuntu1804-README.md) | 3.17.0 | Mostly in sync with Azure DevOps |
-| [GitHub Actions 20.04](https://github.com/actions/virtual-environments/blob/main/images/linux/Ubuntu2004-README.md) | 3.17.0 | Mostly in sync with Azure DevOps |
+| [Azure DevOps 18.04](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted?view=azure-devops#use-a-microsoft-hosted-agent) | 3.21.3 | kept up to date |
+| [GitHub Actions 18.04](https://github.com/actions/virtual-environments/blob/main/images/linux/Ubuntu1804-README.md) | 3.21.3 | Same runners as Azure DevOps |
+| [GitHub Actions 20.04](https://github.com/actions/virtual-environments/blob/main/images/linux/Ubuntu2004-README.md) | 3.21.3 | Same runners as Azure DevOps |
 
 If you are using GitHub Actions, also see the [jwlawson/actions-setup-cmake](https://github.com/marketplace/actions/actions-setup-cmake) action, which can install your selection of CMake, even in a docker action run.
 
@@ -143,15 +143,17 @@ Also see [pkgs.org/download/cmake](https://pkgs.org/download/cmake).
 
 ## Pip
 
-[This][PyPI] is also provided as an official package, maintained by the authors of CMake at KitWare. It's a rather new method, and might fail on some systems (Alpine isn't supported last I checked, but that has a recent CMake), but works really well when it works (like on Travis CI). If you have pip (Python's package installer), you can do:
+[This][PyPI] is also provided as an official package, maintained by the authors of CMake at KitWare and several PyPA members, including myself. It's now supported on special architectures, like PowerPC on Linux and Apple Silicon on macOS, and on MUSL systems like Alpine too. If you have pip (Python's package installer), you can do:
 
 ```term
 gitbook $ pip install cmake
 ```
 
-And as long as a binary exists for your system, you'll be up-and-running almost immediately. If a binary doesn't exist, it will try to use KitWare's `scikit-build` package to build, which currently can't be listed as a dependency in the packaging system, and might even require (an older) copy of CMake to build. So only use this system if binaries exist, which is most of the time.
+And as long as a binary exists for your system, you'll be up-and-running almost immediately. If a binary doesn't exist, it will try to use KitWare's `scikit-build` package to build, and will require an older copy of CMake to build. So only use this system if binaries exist, which is most of the time.
 
 This has the benefit of respecting your current virtual environment, as well. It really shines when placed in a `pyproject.toml` file, however - it will only be installed to build your package, and will not remain afterwords! Fantastic.
+
+This also, of course, works with pipx. So you can even use `pipx run cmake` to run CMake in a disposable virtual environment, without any setup - and this works out-of-the-box on GitHub Actions, since `pipx` is a supported package manager there!
 
 {% hint style='info' %}
 Personally, on Linux, I put versions of CMake in folders, like `/opt/cmake312` or `~/opt/cmake312`, and then add them to [LMod][]. See [`envmodule_setup`][envmodule_setup] for help setting up an LMod system on macOS or Linux. It takes a bit to learn, but is a great way to manage package and compiler versions.

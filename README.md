@@ -76,7 +76,7 @@ This book tries to solve the problem of the poor examples and best practices tha
 Other material from the original author of this book:
 
 * [HSF CMake Training][]
-* [Interactive Modern CMake talk](https://gitlab.com/CLIUtils/modern-cmake-interactive-talk)
+* [Interactive Modern CMake talks](https://gitlab.com/CLIUtils/modern-cmake-interactive-talk)
 
 There are some other places to find good information on the web. Here are some of them:
 
