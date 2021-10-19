@@ -4,7 +4,7 @@ People love to hate build systems.
 Just watch the talks from CppCon17 to see examples of developers making the state of build systems the brunt of jokes.
 This raises the question: Why?
 Certainly there are no shortage of problems when building.
-But I think that, in 2020, we have a very good solution to quite a few of those problems.
+But I think that, in 2021, we have a very good solution to quite a few of those problems.
 It's CMake. Not CMake 2.8 though; that was released before C++11 even existed!
 Nor the horrible examples out there for CMake (even those posted on KitWare's own tutorials list).
 I'm talking about Modern CMake. CMake 3.4+, maybe even CMake 3.21+!
@@ -15,6 +15,8 @@ And CMake 3.11+ is supposed to be significantly faster, as well!
 {% hint style='working' %}
 This book is meant to be a living document. You can raise an issue or put in a merge request on [GitLab](https://gitlab.com/CLIUtils/modern-cmake).
 You can also [download a copy as a PDF](https://CLIUtils.gitlab.io/modern-cmake/modern-cmake.pdf). Be sure to check the [HSF CMake Training][], as well!
+
+[HSF CMake Training]: https://hsf-training.github.io/hsf-training-cmake-webpage/01-intro/index.html
 {% endhint %}
 
 In short, here are the most likely questions in your mind if you are considering Modern CMake:
