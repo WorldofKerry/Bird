@@ -11,6 +11,12 @@ I'm talking about Modern CMake. CMake 3.4+, maybe even CMake 3.21+!
 It's clean, powerful, and elegant, so you can spend most of your time coding, not adding lines to an unreadable, unmaintainable Make (Or CMake 2) file.
 And CMake 3.11+ is supposed to be significantly faster, as well!
 
+{% hint %}
+Are you interested in using CMake to build Python packages? Read about a [proposal to work on Scikit-build here][skprop], and let me know if you have a science use case!
+
+[skprop]: https://iscinumpy.gitlab.io/post/scikit-build-proposal/
+{% endhint %}
+
 
 {% hint style='working' %}
 This book is meant to be a living document. You can raise an issue or put in a merge request on [GitLab](https://gitlab.com/CLIUtils/modern-cmake).
