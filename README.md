@@ -46,7 +46,7 @@ If so, you'll benefit from a CMake-like build system.
 
 ## Why must the answer be CMake?
 
-Build systems is a hot topic. Of course there are many options. But even a really good one, or one that re-uses a familiar syntax, can't come close to CMake.
+Build systems are a hot topic. Of course there are many options. But even a really good one, or one that re-uses a familiar syntax, can't come close to CMake.
 Why?
 Support.
 Every IDE supports CMake (or CMake supports that IDE).
