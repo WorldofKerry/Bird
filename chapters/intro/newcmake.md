@@ -138,6 +138,7 @@ CMake now is built with C++11 compilers. Lots of useful improvements help write 
 * FindMPI vastly expanded
 * FindOpenMP improved
 * Dynamic test discovery for `GoogleTest`
+* `cmake_host_system_information` can access much more information.
 
 ## [CMake 3.11][] : Faster & IMPORTED INTERFACE
 
@@ -336,7 +337,7 @@ support. Presets continue to be improved.
 
 * Initially released [July 14, 2021](https://blog.kitware.com/cmake-3-21-0-available-for-download/)
 * Preliminary support for MSVC 2022
-* `CMAKE_<LANG_LINKER_LAUNCHER` added for make and ninja
+* `CMAKE_<LANG>_LINKER_LAUNCHER` added for make and ninja
 * HIP added as a language
 * C17 and C23 support added
 * `--instal-prefix <dir>` and `--toolchain <file>` added when running CMake
@@ -347,9 +348,24 @@ support. Presets continue to be improved.
 * `PROJECT_IS_TOP_LEVEL` and `<PROJECT-NAME>_IS_TOP_LEVEL` finally added
 * Caching improvements for the `find_` commands
 
+## [CMake 3.22][]: Handy env vars
+
+A smaller release with some nice improvements all around focused on supporting
+common build situations. You can finally set `CMAKE_BUILD_TYPE` in your
+environment to set a default build type. There are several other new env vars
+and variables too.  Compiler flags related to standards have been improved.
+`cmake_host_system_information` got improved further (from 3.10) with OS
+information.
 
 
-
+* Initially released [November 18, 2021](https://blog.kitware.com/cmake-3-22-0-available-for-download/)
+* New environment variables for defaults, `CMAKE_BUILD_TYPE` and `CMAKE_CONFIGURATION_TYPES`
+* New environment variable `CMAKE_INSTALL_MODE` for install types (symlinks)
+* New `CMAKE_REQUIRE_FIND_PACKAGE_<PackageName>` variable to convert an optional find to a required one
+* `CMAKE_<LANG>_EXTENSIONS_DEFAULT` comes from the compiler
+* `CMakeDependentOption` uses normal conditional syntax now
+* CTest can now modify environment variables
+* Some generators now use external (system) markers on includes for MSVC
 
 [Releases]: https://cmake.org/cmake/help/latest/release/index.html
 [CMake 3.0]: https://cmake.org/cmake/help/latest/release/3.0.html
@@ -374,6 +390,7 @@ support. Presets continue to be improved.
 [CMake 3.19]: https://cmake.org/cmake/help/latest/release/3.19.html
 [CMake 3.20]: https://cmake.org/cmake/help/latest/release/3.20.html
 [CMake 3.21]: https://cmake.org/cmake/help/latest/release/3.21.html
+[CMake 3.22]: https://cmake.org/cmake/help/latest/release/3.22.html
 [CMake master]: https://cmake.org/cmake/help/git-master/release/index.html
 [fastercmake]: https://blog.kitware.com/improving-cmakes-runtime-performance/
 
