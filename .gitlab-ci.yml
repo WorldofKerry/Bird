@@ -18,6 +18,9 @@ pages:
   only:
     - master
   cache:
+    key:
+      files:
+        - package-lock.json
     paths:
       - node_modules/
   before_script:
