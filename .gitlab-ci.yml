@@ -22,9 +22,7 @@ pages:
       - node_modules/
   before_script:
     - apt-get update && apt-get install -y calibre calibre-bin libxss1 libasound2
-    - npm install gitbook-cli@2.2.0 svgexport@0.3.2
-    - npx gitbook fetch 3.2.3
-    - npx gitbook install
+    - npm install --unsafe-perm
   script:
     - npx gitbook build . public
     - npx gitbook pdf . public/modern-cmake.pdf

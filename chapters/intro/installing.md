@@ -11,7 +11,7 @@ If you have a built in copy of CMake, it isn't special or customized for your sy
 Ordered by author preference:
 
 * All
-    - [Pip][PyPI] (official, often updates same-day)
+    - [Pip(x)][PyPI] (official, often updates same-day)
     - [Anaconda][] / [Conda-Forge][]
 * Windows
     - [Chocolatey][]
@@ -96,19 +96,24 @@ The default on 8 is not too bad, but you should not use the default on 7. Use th
 
 You should only use the default CMake on 18.04+; it's an LTS release with a pretty decent minimum version!
 
+#### Debian
+
+[![Debian 10 package](https://repology.org/badge/version-for-repo/debian_10/cmake.svg)][repology] 
+[![Debian 10 backports package](https://repology.org/badge/version-for-repo/debian_10_backports/cmake.svg)][repology] 
+[![Debian 11 package](https://repology.org/badge/version-for-repo/debian_11/cmake.svg)][repology] 
+[![Debian 11 backports package](https://repology.org/badge/version-for-repo/debian_11_backports/cmake.svg)][repology] 
+[![Debian Unstable package](https://repology.org/badge/version-for-repo/debian_unstable/cmake.svg)][repology]
+
 #### Other
 
 [![Alpine Linux 3.12 package](https://repology.org/badge/version-for-repo/alpine_3_12/cmake.svg)](https://pkgs.alpinelinux.org/packages?name=cmake&branch=v3.12)
 [![Arch package](https://repology.org/badge/version-for-repo/arch/cmake.svg)][repology]
-[![Debian Stable package](https://repology.org/badge/version-for-repo/debian_stable/cmake.svg)][repology]
-[![Debian Testing package](https://repology.org/badge/version-for-repo/debian_testing/cmake.svg)][repology]
 [![Fedora 32 package](https://repology.org/badge/version-for-repo/fedora_32/cmake.svg)][repology]
 [![FreeBSD port](https://repology.org/badge/version-for-repo/freebsd/cmake.svg)][repology]
 [![OpenBSD port](https://repology.org/badge/version-for-repo/openbsd/cmake.svg)][repology]
 [![Gentoo package](https://repology.org/badge/version-for-repo/gentoo/cmake.svg)][repology]
 [![openSUSE Tumbleweed package](https://repology.org/badge/version-for-repo/opensuse_tumbleweed/cmake.svg)][repology]
-[![Linuxbrew package](https://repology.org/badge/version-for-repo/linuxbrew/cmake.svg)][repology]
-
+[![Homebrew package](https://repology.org/badge/version-for-repo/homebrew/cmake.svg)][homebrew]
 
 ### General tools
 
@@ -126,9 +131,8 @@ Just `pip install cmake` on many systems. Add `--user` if you have to (modern pi
 |---------------|---------------|-------|
 | [TravisCI Xenial](https://docs.travis-ci.com/user/reference/xenial/#compilers-and-build-toolchain) | 3.12.4 | Mid November 2018 this image became ready for widescale use. |
 | [TravisCI Bionic](https://docs.travis-ci.com/user/reference/bionic/#compilers-and-build-toolchain) | 3.12.4 | Same as Xenial at the moment. |
-| [Azure DevOps 18.04](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted?view=azure-devops#use-a-microsoft-hosted-agent) | 3.22.3 | kept up to date |
-| [GitHub Actions 18.04](https://github.com/actions/virtual-environments/blob/main/images/linux/Ubuntu1804-README.md) | 3.22.3 | Same runners as Azure DevOps |
-| [GitHub Actions 20.04](https://github.com/actions/virtual-environments/blob/main/images/linux/Ubuntu2004-README.md) | 3.22.3 | Same runners as Azure DevOps |
+| [Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted?view=azure-devops#use-a-microsoft-hosted-agent) | 3.21.4 | kept up to date |
+| [GitHub Actions 20.04](https://github.com/actions/virtual-environments/blob/main/images/linux/Ubuntu2004-README.md) | 2.21.4 | Same runners as Azure DevOps |
 
 If you are using GitHub Actions, also see the [jwlawson/actions-setup-cmake](https://github.com/marketplace/actions/actions-setup-cmake) action, which can install your selection of CMake, even in a docker action run.
 
