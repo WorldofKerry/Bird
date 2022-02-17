@@ -61,7 +61,7 @@ You can build with a variety of tools; `make` is usually the default. To see all
 
 And you can pick a tool with `-G"My Tool"` (quotes only needed if spaces are in the tool name). You should pick a tool on your first CMake call in a directory, just like the compiler. Feel free to have several build directories, like `build/` and `buildXcode`.
 You can set the environment variable `CMAKE_GENERATOR` to control the default generator (CMake 3.15+).
-Note that makefiles will only run in parallel if you explicilty pass a number of threads, such as `make -j2`, while Ninja will automatically run in parallel. You can directly pass a parallelization option such as `-j2` to the `cmake --build .` command in recent versions of CMake.
+Note that makefiles will only run in parallel if you explicitly pass a number of threads, such as `make -j2`, while Ninja will automatically run in parallel. You can directly pass a parallelization option such as `-j2` to the `cmake --build .` command in recent versions of CMake.
 
 ## Setting options
 

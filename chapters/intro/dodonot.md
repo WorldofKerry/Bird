@@ -43,7 +43,7 @@ at least as new as your compiler.
 * 3.13: Debian stable.
 * 3.16: Ubuntu 20.04.
 * 3.19: First to support Apple Silicon.
-* latest: pip/conda-forge/homebew/chocolaty, ect.
+* latest: pip/conda-forge/homebew/chocolaty, etc.
 
 ### What minimum to choose - Features:
 

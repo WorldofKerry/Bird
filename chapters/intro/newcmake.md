@@ -1,7 +1,7 @@
 # What's new in in CMake
 
 
-This is an abbreviated version of the CMake changlog with just the highlights for authors. Names for each release are arbitrarily picked by the author.
+This is an abbreviated version of the CMake changelog with just the highlights for authors. Names for each release are arbitrarily picked by the author.
 
 ## [CMake 3.0][] : Interface libraries
 

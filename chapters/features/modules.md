@@ -67,7 +67,7 @@ There are lots of options you can add, like `COMPILE_DEFINITIONS`. In CMake 3.8+
 
 ## «module:FeatureSummary»
 
-This is a fairly useful but rather odd module. It allows you to print out a list of packages what were searched for, as well as any options you explicity mark. It's partially but not completely tied into «command:`find_package`». You first include the module, as always:
+This is a fairly useful but rather odd module. It allows you to print out a list of packages what were searched for, as well as any options you explicitly mark. It's partially but not completely tied into «command:`find_package`». You first include the module, as always:
 
 ```cmake
 include(FeatureSummary)

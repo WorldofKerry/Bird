@@ -56,9 +56,9 @@ Then, to add a test, I'd recommend the following macro:
 
 ```cmake
 macro(package_add_test TESTNAME)
-    # create an exectuable in which the tests will be stored
+    # create an executable in which the tests will be stored
     add_executable(${TESTNAME} ${ARGN})
-    # link the Google test infrastructure, mocking library, and a default main fuction to
+    # link the Google test infrastructure, mocking library, and a default main function to
     # the test executable.  Remove g_test_main if writing your own main function.
     target_link_libraries(${TESTNAME} gtest gmock gtest_main)
     # gtest_discover_tests replaces gtest_add_tests,
