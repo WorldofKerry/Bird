@@ -23,7 +23,7 @@ The next two lists are heavily based on the excellent gist [Effective Modern CMa
 * **Use `cmake_policy` and/or range of versions**: Policies change for a reason. Only piecemeal set OLD policies if you have to.
 
 
-## Selecting a minimum in 2021:
+## Selecting a minimum in 2022:
 
 What minimum CMake should you _run_ locally, and what minimum should you _support_ for people using your
 code? Since you are reading this, you should be able to get a release in the last few versions of CMake;

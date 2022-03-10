@@ -4,7 +4,7 @@ People love to hate build systems.
 Just watch the talks from CppCon17 to see examples of developers making the state of build systems the brunt of jokes.
 This raises the question: Why?
 Certainly there are no shortage of problems when building.
-But I think that, in 2021, we have a very good solution to quite a few of those problems.
+But I think that, in 2022, we have a very good solution to quite a few of those problems.
 It's CMake. Not CMake 2.8 though; that was released before C++11 even existed!
 Nor the horrible examples out there for CMake (even those posted on KitWare's own tutorials list).
 I'm talking about Modern CMake. CMake 3.4+, maybe even CMake 3.22+!
