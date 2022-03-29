@@ -367,6 +367,31 @@ information.
 * CTest can now modify environment variables
 * Some generators now use external (system) markers on includes for MSVC
 
+## [CMake 3.23][]: Header only libraries
+
+A solid release focused on header only libraries, more user control, CMake
+presets, and better CUDA support.  There are some powerful new features for
+header only libraries, like the various `*_SETS` target properties. There are
+new controls like the ability to restrict paths for `find_` commands and the
+ability to remove `SYSTEM` from an existing target. You also get expanded
+debugging features, and the ability to force all links to be to targets.
+Presets can include other files.  CUDA and C# received new updates, and a
+couple of compilers were added.
+
+* Initially released [March 29, 2022](https://blog.kitware.com/cmake-3-23-0-available-for-download/)
+* CMake presets are a bit nicer, with the ability to include other files.
+* A couple of new supported compilers, and better C# support.
+* `FILE_SET` for `install` and `target_sources` header-only source files.
+* `<INTERFACE_>HEADER_SETS`, `<INTERFACE_>HEADER_DIRS` for target headers.
+* `CUDA_ARCHITECTURES` support for all and all-major.a
+* DEBUG messages from can be enabled for `find_*` or find modules.
+* `define_property()` has a handy `INITIALIZE_FROM_VARIABLE` option.
+* `CMAKE_<SYSTEM_>IGNORE_PREFIX_PATH` to control `find_*` commands.
+* `<CMAKE_>LINK_LIBRARIES_ONLY_TARGETS` added to force only targets linked
+  (nice for finding mistakes!).
+* `IMPORTED_NO_SYSTEM`, a new property to forcibly remove SYSTEM from a target.
+* `FindGTest` now adds a `GMock` target if found.
+
 [Releases]: https://cmake.org/cmake/help/latest/release/index.html
 [CMake 3.0]: https://cmake.org/cmake/help/latest/release/3.0.html
 [CMake 3.1]: https://cmake.org/cmake/help/latest/release/3.1.html
@@ -391,6 +416,7 @@ information.
 [CMake 3.20]: https://cmake.org/cmake/help/latest/release/3.20.html
 [CMake 3.21]: https://cmake.org/cmake/help/latest/release/3.21.html
 [CMake 3.22]: https://cmake.org/cmake/help/latest/release/3.22.html
+[CMake 3.23]: https://cmake.org/cmake/help/latest/release/3.23.html
 [CMake master]: https://cmake.org/cmake/help/git-master/release/index.html
 [fastercmake]: https://blog.kitware.com/improving-cmakes-runtime-performance/
 
