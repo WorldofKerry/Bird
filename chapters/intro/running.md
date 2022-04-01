@@ -69,9 +69,10 @@ You set options in CMake with `-D`. You can see a list of options with `-L`, or 
 
 ## Verbose and partial builds
 
-Again, not really CMake, but if you are using a command line build tool like `make`, you can get verbose builds:
+Although not all build tools support it, you can get verbose builds (pick one):
 
 {% term %}
+~/package $ cmake --build build --verbose # CMake 3.14+ only
 ~/package/build $ VERBOSE=1 make
 {% endterm %}
 
