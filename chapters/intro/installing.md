@@ -93,6 +93,7 @@ The default on 8 is not too bad, but you should not use the default on 7. Use th
 [![Ubuntu 16.04 package](https://repology.org/badge/version-for-repo/ubuntu_16_04/cmake.svg?minversion=3.10.0)](https://launchpad.net/ubuntu/xenial/+source/cmake)
 [![Ubuntu 18.04 package](https://repology.org/badge/version-for-repo/ubuntu_18_04/cmake.svg?minversion=3.10.0)](https://launchpad.net/ubuntu/bionic/+source/cmake)
 [![Ubuntu 20.04 package](https://repology.org/badge/version-for-repo/ubuntu_20_04/cmake.svg?minversion=3.10.0)](https://launchpad.net/ubuntu/focal/+source/cmake)
+[![Ubuntu 22.04 package](https://repology.org/badge/version-for-repo/ubuntu_22_04/cmake.svg?minversion=3.10.0)](https://launchpad.net/ubuntu/jammy/+source/cmake)
 
 You should only use the default CMake on 18.04+; it's an LTS release with a pretty decent minimum version!
 
@@ -106,9 +107,9 @@ You should only use the default CMake on 18.04+; it's an LTS release with a pret
 
 #### Other
 
-[![Alpine Linux 3.12 package](https://repology.org/badge/version-for-repo/alpine_3_12/cmake.svg)](https://pkgs.alpinelinux.org/packages?name=cmake&branch=v3.12)
+[![Alpine Linux 3.15 package](https://repology.org/badge/version-for-repo/alpine_3_15/cmake.svg)](https://pkgs.alpinelinux.org/packages?name=cmake&branch=v3.15)
 [![Arch package](https://repology.org/badge/version-for-repo/arch/cmake.svg)][repology]
-[![Fedora 32 package](https://repology.org/badge/version-for-repo/fedora_32/cmake.svg)][repology]
+[![Fedora 35 package](https://repology.org/badge/version-for-repo/fedora_35/cmake.svg)][repology]
 [![FreeBSD port](https://repology.org/badge/version-for-repo/freebsd/cmake.svg)][repology]
 [![OpenBSD port](https://repology.org/badge/version-for-repo/openbsd/cmake.svg)][repology]
 [![Gentoo package](https://repology.org/badge/version-for-repo/gentoo/cmake.svg)][repology]
