@@ -14,6 +14,7 @@ Ordered by author preference:
     - [Pip(x)][PyPI] (official, often updates same-day)
     - [Anaconda][] / [Conda-Forge][]
 * Windows
+    - [Winget][]
     - [Chocolatey][]
     - [Scoop][]
     - [MSYS2][]
@@ -63,6 +64,7 @@ Here are some common build environments and the CMake version you'll find on the
 
 ### Windows
 
+[![Winget package](https://repology.org/badge/version-for-repo/winget/cmake.svg)][Winget]
 [![Chocolatey package](https://repology.org/badge/version-for-repo/chocolatey/cmake.svg)][chocolatey]
 [![MSYS2 mingw package](https://repology.org/badge/version-for-repo/msys2_mingw/cmake.svg)][MSYS2]
 [![MSYS2 msys2 package](https://repology.org/badge/version-for-repo/msys2_msys2/cmake.svg)][MSYS2]
@@ -173,6 +175,7 @@ Personally, on Linux, I put versions of CMake in folders, like `/opt/cmake312` o
 [apt]:           https://apt.kitware.com/
 [snap]:          https://snapcraft.io/cmake
 [PyPI]:          https://pypi.org/project/cmake/
+[winget]:        https://github.com/microsoft/winget-pkgs/tree/master/manifests/k/Kitware/CMake
 [chocolatey]:    https://chocolatey.org/packages/cmake
 [scoop]:         https://github.com/ScoopInstaller/Main/blob/master/bucket/cmake.json
 [MSYS2]:         https://packages.msys2.org/base/mingw-w64-cmake
