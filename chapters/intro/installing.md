@@ -38,7 +38,7 @@ On Linux, there are several options. Kitware provides a [Debian/Ubunutu apt repo
 ~ $ wget -qO- "https://cmake.org/files/v3.23/cmake-3.23.1-linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C ~/.local
 {% endterm %}
 
-The names changed in 3.23; older releases had names like `cmake-3.19.7-Linux-x86_64.tar.gz`. If you just want a local folder with CMake only:
+The names changed in 3.20; older releases had names like `cmake-3.19.7-Linux-x86_64.tar.gz`. If you just want a local folder with CMake only:
 
 {% term %}
 ~ $ mkdir -p cmake-3.23 && wget -qO- "https://cmake.org/files/v3.23/cmake-3.23.1-linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C cmake-3.23
@@ -101,10 +101,10 @@ You should only use the default CMake on 18.04+; it's an LTS release with a pret
 
 #### Debian
 
-[![Debian 10 package](https://repology.org/badge/version-for-repo/debian_10/cmake.svg)][repology] 
-[![Debian 10 backports package](https://repology.org/badge/version-for-repo/debian_10_backports/cmake.svg)][repology] 
-[![Debian 11 package](https://repology.org/badge/version-for-repo/debian_11/cmake.svg)][repology] 
-[![Debian 11 backports package](https://repology.org/badge/version-for-repo/debian_11_backports/cmake.svg)][repology] 
+[![Debian 10 package](https://repology.org/badge/version-for-repo/debian_10/cmake.svg)][repology]
+[![Debian 10 backports package](https://repology.org/badge/version-for-repo/debian_10_backports/cmake.svg)][repology]
+[![Debian 11 package](https://repology.org/badge/version-for-repo/debian_11/cmake.svg)][repology]
+[![Debian 11 backports package](https://repology.org/badge/version-for-repo/debian_11_backports/cmake.svg)][repology]
 [![Debian Unstable package](https://repology.org/badge/version-for-repo/debian_unstable/cmake.svg)][repology]
 
 #### Other

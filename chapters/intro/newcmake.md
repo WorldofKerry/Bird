@@ -302,7 +302,7 @@ for permissions. Further support for generator expressions in more places.
 * `DIRECTORY` can now include a binary directory in property commands
 * New `JSON` commands for `string`
 * New `OPTIMIZE_DEPENDENCIES` property and `CMAKE_*` variable for smartly dropping dependencies of static and object libraries.
-* PCH support expanded with `PCH_INSTANTIATE_TEMPLATES` property and `CMAKE_*` variable. 
+* PCH support expanded with `PCH_INSTANTIATE_TEMPLATES` property and `CMAKE_*` variable.
 * Check modules have been expanded with `CUDA` and `ISPC` languages
 * FindPython: `Python*_LINK_OPTIONS` added
 * `compute-sanitizer` for ctest now supports CUDA for memcheck
@@ -392,6 +392,30 @@ couple of compilers were added.
 * `IMPORTED_NO_SYSTEM`, a new property to forcibly remove SYSTEM from a target.
 * `FindGTest` now adds a `GMock` target if found.
 
+
+## [CMake 3.24][CMake master]: WIP
+
+The next release is shaping up to be a fantastic release. Package writers are
+getting integration between `find_package` and `FetchContent` that will allow
+"download if missing" workflows, and is configurable by packagers. Similarly,
+warnings as errors can be set by a package and removed by packagers, as well
+(still make sure not to do this unless you are being build as the main
+project!).
+
+
+* `--fresh` option removes the old cache when running.
+* `find_package` and `FetchContent` now have integration - you have options to download missing dependencies.
+* `find_package` has a new `GLOBAL` option.
+* `CMAKE_PROJECT_TOP_LEVEL_INCLUDES` allows a user (like packagers) to inject pre-project code.
+* `PATH` management for generator expressions.
+* `CMAKE_COLOR_DIAGNOSTICS` env var & variable added, replacing `CMAKE_COLOR_MAKEFILE`.
+* You can disable `find_*` searching the install prefix.
+* `COMPILE_WARNING_AS_ERROR` property and `CMAKE_` variable, and `--compile-no-warning-as-error` to disable it.
+* CUDA supports `native` to compile for the current GPUs detected.
+* `SYSTEM` includes now are respected on MSVC generators.
+* Better support for MSVC, XCode, and others.
+* `LLVMFlang` compiler support.
+
 [Releases]: https://cmake.org/cmake/help/latest/release/index.html
 [CMake 3.0]: https://cmake.org/cmake/help/latest/release/3.0.html
 [CMake 3.1]: https://cmake.org/cmake/help/latest/release/3.1.html
@@ -419,4 +443,3 @@ couple of compilers were added.
 [CMake 3.23]: https://cmake.org/cmake/help/latest/release/3.23.html
 [CMake master]: https://cmake.org/cmake/help/git-master/release/index.html
 [fastercmake]: https://blog.kitware.com/improving-cmakes-runtime-performance/
-

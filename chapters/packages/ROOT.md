@@ -62,12 +62,12 @@ Dictionary generation is ROOT's way of working around the missing reflection fea
 * Your class definition should end with `ClassDef(MyClassName, 1)`
 * Your class implementation should have `ClassImp(MyClassName)` in it
 
-ROOT provides `rootcling` and `genreflex` (a legacy interface to `rootcling`) binaries which produce the source files required to build the dictionary. It also defines `root_generate_dictionary`, a CMake function to invoke `rootcling` during the build process. 
+ROOT provides `rootcling` and `genreflex` (a legacy interface to `rootcling`) binaries which produce the source files required to build the dictionary. It also defines `root_generate_dictionary`, a CMake function to invoke `rootcling` during the build process.
 
-To load this function, first include the ROOT macros:  
+To load this function, first include the ROOT macros:
 ```cmake
 include("${ROOT_DIR}/modules/RootNewMacros.cmake")
-# For ROOT versions than 6.16, things break 
+# For ROOT versions than 6.16, things break
 # if nothing is in the global include list!
 if (${ROOT_VERSION} VERSION_LESS "6.16")
     include_directories(ROOT_NONEXISTENT_DIRECTORY_HACK)
@@ -101,7 +101,7 @@ add_library(Example)
 root_generate_dictionary(G__Example Example.h MODULE Example LINKDEF ExampleLinkDef.h)
 ```
 
-The full name of the dictionary (e.g. `G__Example`) should not be identical to the `MODULE` argument. 
+The full name of the dictionary (e.g. `G__Example`) should not be identical to the `MODULE` argument.
 
 
 [linkdef-root]: https://root.cern.ch/selecting-dictionary-entries-linkdefh
