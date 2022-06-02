@@ -25,7 +25,6 @@ write_basic_package_version_file(
     )
 ```
 
-
 You have two choices next. You need to make a `MyLibConfig.cmake`, but you can do it either by exporting your targets directly to it, or by writing it by hand, then including the targets file. The later option is what you'll need if you have any dependencies, even just OpenMP, so I'll illustrate that method.
 
 First, make an install targets file (very similar to the one you made in the build directory):

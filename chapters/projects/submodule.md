@@ -43,7 +43,6 @@ add_subdirectory(extern/repo)
 
 Or, you can build an interface library target yourself if it is a header only project. Or, you can use `find_package` if that is supported, probably preparing the initial search directory to be the one you've added (check the docs or the file for the `Find*.cmake` file you are using). You can also include a CMake helper file directory if you append to your `CMAKE_MODULE_PATH`, for example to add `pybind11`'s improved `FindPython*.cmake` files.
 
-
 ### Bonus: Git version number
 
 Move this to Git section:

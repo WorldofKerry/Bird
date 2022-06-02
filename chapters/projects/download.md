@@ -4,7 +4,6 @@
 
 Until CMake 3.11, the primary download method for packages was done at build time. This causes several issues; most important of which is that `add_subdirectory` doesn't work on a file that doesn't exist yet! The built-in tool for this, ExternalProject, has to work around this by doing the build itself. (It can, however, build non-CMake packages as well).[^1]
 
-
 [^1]: Note that ExternalData is the tool for non-package data.
 
 ## Downloading Method: configure time

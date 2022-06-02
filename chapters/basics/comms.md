@@ -19,6 +19,7 @@ This functionality is used quite frequently; for example, on `Version.h.in`:
 ```
 
 #### CMake lines:
+
 ```cmake
 configure_file (
     "${PROJECT_SOURCE_DIR}/include/My/Version.h.in"

@@ -10,23 +10,23 @@ If you have a built in copy of CMake, it isn't special or customized for your sy
 
 Ordered by author preference:
 
-* All
-    - [Pip(x)][PyPI] (official, often updates same-day)
-    - [Anaconda][] / [Conda-Forge][]
-* Windows
-    - [Winget][]
-    - [Chocolatey][]
-    - [Scoop][]
-    - [MSYS2][]
-    - [Download binary][download] (official)
-* MacOS
-    - [Homebrew][]
-    - [MacPorts][]
-    - [Download binary][download] (official)
-* Linux
-    - [Snapcraft][snap] (official)
-    - [APT repository][apt] (Ubuntu/Debian only) (official)
-    - [Download binary][download] (official)
+- All
+  - [Pip(x)][pypi] (official, often updates same-day)
+  - [Anaconda][] / [Conda-Forge][]
+- Windows
+  - [Winget][]
+  - [Chocolatey][]
+  - [Scoop][]
+  - [MSYS2][]
+  - [Download binary][download] (official)
+- MacOS
+  - [Homebrew][]
+  - [MacPorts][]
+  - [Download binary][download] (official)
+- Linux
+  - [Snapcraft][snap] (official)
+  - [APT repository][apt] (Ubuntu/Debian only) (official)
+  - [Download binary][download] (official)
 
 ## Official package
 
@@ -53,7 +53,6 @@ And, if you want a system install, install to `/usr/local`; this is an excellent
 docker $ wget -qO- "https://cmake.org/files/v3.23/cmake-3.23.1-linux-x86_64.tar.gz" | tar --strip-components=1 -xz -C /usr/local
 {% endterm %}
 
-
 If you are on a system without wget, replace `wget -qO-` with `curl -s`.
 
 You can also build CMake on any system, it's pretty easy, but binaries are faster.
@@ -64,10 +63,10 @@ Here are some common build environments and the CMake version you'll find on the
 
 ### Windows
 
-[![Winget package](https://repology.org/badge/version-for-repo/winget/cmake.svg)][Winget]
+[![Winget package](https://repology.org/badge/version-for-repo/winget/cmake.svg)][winget]
 [![Chocolatey package](https://repology.org/badge/version-for-repo/chocolatey/cmake.svg)][chocolatey]
-[![MSYS2 mingw package](https://repology.org/badge/version-for-repo/msys2_mingw/cmake.svg)][MSYS2]
-[![MSYS2 msys2 package](https://repology.org/badge/version-for-repo/msys2_msys2/cmake.svg)][MSYS2]
+[![MSYS2 mingw package](https://repology.org/badge/version-for-repo/msys2_mingw/cmake.svg)][msys2]
+[![MSYS2 msys2 package](https://repology.org/badge/version-for-repo/msys2_msys2/cmake.svg)][msys2]
 
 Also [Scoop][scoop] is generally up to date. The normal installers from CMake.org are common on Windows, too.
 
@@ -121,21 +120,20 @@ You should only use the default CMake on 18.04+; it's an LTS release with a pret
 ### General tools
 
 [![ConanCenter package](https://repology.org/badge/version-for-repo/conancenter/cmake.svg)][repology]
-[![PyPI](https://img.shields.io/pypi/v/cmake)][PyPI]
-[![Conda-forge](https://img.shields.io/conda/vn/conda-forge/cmake.svg)][Conda-Forge]
-[![Anaconda](https://anaconda.org/anaconda/cmake/badges/version.svg?style=flat)][Anaconda]
+[![PyPI](https://img.shields.io/pypi/v/cmake)][pypi]
+[![Conda-forge](https://img.shields.io/conda/vn/conda-forge/cmake.svg)][conda-forge]
+[![Anaconda](https://anaconda.org/anaconda/cmake/badges/version.svg?style=flat)][anaconda]
 
 Just `pip install cmake` on many systems. Add `--user` if you have to (modern pip does this for you if needed). This does not supply Universal2 wheels yet.
 
-
 ### CI
 
-| Distribution  | CMake version | Notes |
-|---------------|---------------|-------|
-| [TravisCI Xenial](https://docs.travis-ci.com/user/reference/xenial/#compilers-and-build-toolchain) | 3.12.4 | Mid November 2018 this image became ready for widescale use. |
-| [TravisCI Bionic](https://docs.travis-ci.com/user/reference/bionic/#compilers-and-build-toolchain) | 3.12.4 | Same as Xenial at the moment. |
-| [Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted?view=azure-devops#use-a-microsoft-hosted-agent) | 3.23.3 | kept up to date |
-| [GitHub Actions 20.04](https://github.com/actions/virtual-environments/blob/main/images/linux/Ubuntu2004-Readme.md) | 3.23.3 | Same runners as Azure DevOps |
+| Distribution                                                                                                                         | CMake version | Notes                                                        |
+| ------------------------------------------------------------------------------------------------------------------------------------ | ------------- | ------------------------------------------------------------ |
+| [TravisCI Xenial](https://docs.travis-ci.com/user/reference/xenial/#compilers-and-build-toolchain)                                   | 3.12.4        | Mid November 2018 this image became ready for widescale use. |
+| [TravisCI Bionic](https://docs.travis-ci.com/user/reference/bionic/#compilers-and-build-toolchain)                                   | 3.12.4        | Same as Xenial at the moment.                                |
+| [Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted?view=azure-devops#use-a-microsoft-hosted-agent) | 3.23.3        | kept up to date                                              |
+| [GitHub Actions 20.04](https://github.com/actions/virtual-environments/blob/main/images/linux/Ubuntu2004-Readme.md)                  | 3.23.3        | Same runners as Azure DevOps                                 |
 
 If you are using GitHub Actions, also see the [jwlawson/actions-setup-cmake](https://github.com/marketplace/actions/actions-setup-cmake) action, which can install your selection of CMake, even in a docker action run.
 
@@ -145,12 +143,11 @@ Versions less than 3.10 are marked by a deeper color of red.
 
 [![Full listing](https://repology.org/badge/vertical-allrepos/cmake.svg?columns=3&minversion=3.10.0)][repology]
 
-
 Also see [pkgs.org/download/cmake](https://pkgs.org/download/cmake).
 
 ## Pip
 
-[This][PyPI] is also provided as an official package, maintained by the authors of CMake at KitWare and several PyPA members, including myself. It's now supported on special architectures, like PowerPC on Linux and Apple Silicon on macOS, and on MUSL systems like Alpine too. If you have pip (Python's package installer), you can do:
+[This][pypi] is also provided as an official package, maintained by the authors of CMake at KitWare and several PyPA members, including myself. It's now supported on special architectures, like PowerPC on Linux and Apple Silicon on macOS, and on MUSL systems like Alpine too. If you have pip (Python's package installer), you can do:
 
 ```term
 gitbook $ pip install cmake
@@ -170,19 +167,19 @@ Personally, on Linux, I put versions of CMake in folders, like `/opt/cmake312` o
 [^1]: I assume this is obvious, but you are downloading and running code, which exposes you to a man in the middle attack. If you are in a critical environment, you should download the file and check the checksum. (And, no, simply doing this in two steps does not make you any safer, only a checksum is safer).
 [^2]: If you don't have a `.local` in your home directory, it's easy to start. Just make the folder, then add `export PATH="$HOME/.local/bin:$PATH"` to your `.bashrc` or `.bash_profile` or `.profile` file in your home directory. Now you can install any packages you build to `-DCMAKE_INSTALL_PREFIX=~/.local` instead of `/usr/local`!
 
-[repology]:      https://repology.org/project/cmake/versions
-[LMod]:          http://lmod.readthedocs.io/en/latest/
-[apt]:           https://apt.kitware.com/
-[snap]:          https://snapcraft.io/cmake
-[PyPI]:          https://pypi.org/project/cmake/
-[winget]:        https://github.com/microsoft/winget-pkgs/tree/master/manifests/k/Kitware/CMake
-[chocolatey]:    https://chocolatey.org/packages/cmake
-[scoop]:         https://github.com/ScoopInstaller/Main/blob/master/bucket/cmake.json
-[MSYS2]:         https://packages.msys2.org/base/mingw-w64-cmake
-[anaconda]:      https://anaconda.org/anaconda/cmake
-[conda-forge]:   https://github.com/conda-forge/cmake-feedstock
-[download]:      https://cmake.org/download/
-[homebrew]:      https://formulae.brew.sh/formula/cmake
+[repology]: https://repology.org/project/cmake/versions
+[lmod]: http://lmod.readthedocs.io/en/latest/
+[apt]: https://apt.kitware.com/
+[snap]: https://snapcraft.io/cmake
+[pypi]: https://pypi.org/project/cmake/
+[winget]: https://github.com/microsoft/winget-pkgs/tree/master/manifests/k/Kitware/CMake
+[chocolatey]: https://chocolatey.org/packages/cmake
+[scoop]: https://github.com/ScoopInstaller/Main/blob/master/bucket/cmake.json
+[msys2]: https://packages.msys2.org/base/mingw-w64-cmake
+[anaconda]: https://anaconda.org/anaconda/cmake
+[conda-forge]: https://github.com/conda-forge/cmake-feedstock
+[download]: https://cmake.org/download/
+[homebrew]: https://formulae.brew.sh/formula/cmake
 [homebrew-cask]: https://formulae.brew.sh/cask/cmake
-[macports]:      https://ports.macports.org/port/cmake/summary
-[centos]:        https://rpms.remirepo.net/rpmphp/zoom.php?rpm=cmake
+[macports]: https://ports.macports.org/port/cmake/summary
+[centos]: https://rpms.remirepo.net/rpmphp/zoom.php?rpm=cmake

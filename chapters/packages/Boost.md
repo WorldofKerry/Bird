@@ -10,7 +10,7 @@ set(Boost_USE_MULTITHREADED ON)
 set(Boost_USE_STATIC_RUNTIME OFF)
 ```
 
-In CMake 3.5, imported targets were added. These targets handle dependencies for you as well, so they are a very nice way to add Boost libraries. However, CMake has the dependency information baked into it for all known versions of Boost, so CMake must be newer than Boost for these to work. In a recent [merge request][MROldBoost], CMake started assuming that the dependencies hold from the last version it knows about, and will use that (along with giving a warning). This
+In CMake 3.5, imported targets were added. These targets handle dependencies for you as well, so they are a very nice way to add Boost libraries. However, CMake has the dependency information baked into it for all known versions of Boost, so CMake must be newer than Boost for these to work. In a recent [merge request][mroldboost], CMake started assuming that the dependencies hold from the last version it knows about, and will use that (along with giving a warning). This
 functionality was backported into CMake 3.9.
 
 The import targets are in the `Boost::` namespace. `Boost::boost` is the header only part. The other compiled libraries are available, and include dependencies as needed.
@@ -37,7 +37,5 @@ endif()
 target_link_libraries(MyExeOrLibrary PUBLIC Boost::filesystem)
 ```
 
-
-
-[FindBoost]: https://cmake.org/cmake/help/latest/module/FindBoost.html
-[MROldBoost]: https://gitlab.kitware.com/cmake/cmake/merge_requests/1172
+[findboost]: https://cmake.org/cmake/help/latest/module/FindBoost.html
+[mroldboost]: https://gitlab.kitware.com/cmake/cmake/merge_requests/1172

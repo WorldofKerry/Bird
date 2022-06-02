@@ -1,4 +1,4 @@
-# Documentation for Modern Library                             {#mainpage}
+# Documentation for Modern Library {#mainpage}
 
 This is the documentation for my simple example library.
 

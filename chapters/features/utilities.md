@@ -8,7 +8,6 @@ All of these take `;` separated values (a standard list in CMake) that describe 
 
 Set the `CMAKE_<LANG>_COMPILER_LAUNCHER` variable or the `<LANG>_COMPILER_LAUNCHER` property on a target to use something like CCache to "wrap" the compilation of the target. Support for CCache has been expanding in the latest versions of CMake. In practice, this tends to look like this:
 
-
 ```cmake
 find_program(CCACHE_PROGRAM ccache)
 if(CCACHE_PROGRAM)
@@ -17,15 +16,14 @@ if(CCACHE_PROGRAM)
 endif()
 ```
 
-
 ## Utilities
 
 Set the following properties or `CMAKE_*` initializer variables to the command line for the tools. Most of them are limited to C or CXX with make or ninja generators.
 
-* `<LANG>_CLANG_TIDY`: CMake 3.6+
-* `<LANG>_CPPCHECK`
-* `<LANG>_CPPLINT`
-* `<LANG>_INCLUDE_WHAT_YOU_USE`
+- `<LANG>_CLANG_TIDY`: CMake 3.6+
+- `<LANG>_CPPCHECK`
+- `<LANG>_CPPLINT`
+- `<LANG>_INCLUDE_WHAT_YOU_USE`
 
 ## Clang tidy
 
@@ -61,8 +59,7 @@ find_program(
 ## Include what you use
 
 This is an example for using include what you use. First, you'll need to have
-the tool, such as in a docker container or with brew (macOS) with `brew install
-include-what-you-use`.  Then, you can pass this into your build without
+the tool, such as in a docker container or with brew (macOS) with `brew install include-what-you-use`. Then, you can pass this into your build without
 modifying the source:
 
 ```term

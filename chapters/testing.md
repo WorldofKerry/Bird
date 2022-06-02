@@ -44,7 +44,6 @@ add_test(NAME TestName COMMAND $<TARGET_FILE:${TESTNAME}>)
 
 which would use the output location (thus, the executable) of the produced target.
 
-
 ## Building as part of a test
 
 If you want to run CMake to build a project as part of a test, you can do that too (in fact, this is how CMake tests itself). For example, if your master project was called `MyProject` and you had an `examples/simple` project that could build by itself, this would look like:
@@ -66,6 +65,6 @@ add_test(
 
 Look at the subchapters for recipes for popular frameworks.
 
-* [GoogleTest](testing/googletest.md): A popular option from Google. Development can be a bit slow.
-* [Catch2](testing/catch.md): A modern, PyTest-like framework with clever macros.
-* [DocTest](https://github.com/onqtam/doctest): A replacement for Catch2 that is supposed to compile much faster and be cleaner. See Catch2 chapter and replace with DocTest.
+- [GoogleTest](testing/googletest.md): A popular option from Google. Development can be a bit slow.
+- [Catch2](testing/catch.md): A modern, PyTest-like framework with clever macros.
+- [DocTest](https://github.com/onqtam/doctest): A replacement for Catch2 that is supposed to compile much faster and be cleaner. See Catch2 chapter and replace with DocTest.

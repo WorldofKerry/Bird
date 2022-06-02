@@ -3,6 +3,7 @@
 Before writing CMake, let's make sure you know how to run it to make things. This is true for almost all CMake projects, which is almost everything.
 
 ## Building a project
+
 Unless otherwise noted, you should always make a build directory and build from there. You can technically do an in-source build, but you'll have to be careful not to overwrite files or add them to git, so just don't.
 
 Here's the Classic CMake Build Procedure (TM):
@@ -21,23 +22,26 @@ You can replace the make line with `cmake --build .` if you'd like, and it will 
 ~/package $ cmake --build build
 {% endterm %}
 
-Any *one* of these commands will install:
+Any _one_ of these commands will install:
 
 {% term %}
+
 # From the build directory (pick one)
+
 ~/package/build $ make install
 ~/package/build $ cmake --build . --target install
 ~/package/build $ cmake --install . # CMake 3.15+ only
 
 # From the source directory (pick one)
+
 ~/package $ make -C build install
 ~/package $ cmake --build build --target install
 ~/package $ cmake --install build # CMake 3.15+ only
 {% endterm %}
 
-So which set of methods should you use? As long as you *do not forget* to type the build directory as the argument, staying out of the build directory is shorter, and making source changes is easier from the source directory. You should try to get used to using `--build`, as that will free you from using only `make` to build. Note that working from the build directory is historically much more common, and some tools and commands (including CTest <3.20) still require running from the build directory.
+So which set of methods should you use? As long as you _do not forget_ to type the build directory as the argument, staying out of the build directory is shorter, and making source changes is easier from the source directory. You should try to get used to using `--build`, as that will free you from using only `make` to build. Note that working from the build directory is historically much more common, and some tools and commands (including CTest <3.20) still require running from the build directory.
 
-Just to clarify, you can point CMake at either the source directory *from the build directory*, or at an *existing* build directory from anywhere.
+Just to clarify, you can point CMake at either the source directory _from the build directory_, or at an _existing_ build directory from anywhere.
 
 If you use `cmake --build` instead of directly calling the underlying build system, you can use `-v` for verbose builds (CMake 3.14+), `-j N` for parallel builds on N cores (CMake 3.12+), and `--target` (any version of CMake) or `-t` (CMake 3.15+) to pick a target. Otherwise, these commands vary between build systems, such as `VERBOSE=1 make` and `ninja -v`. You can instead use the environment variables for these, as well, such as `CMAKE_BUILD_PARALLEL_LEVEL` (CMake 3.12+) and `VERBOSE` (CMake 3.14+).
 
@@ -88,10 +92,10 @@ CMake has support for cached options. A Variable in CMake can be marked as "cach
 
 These are common CMake options to most packages:
 
-* `-DCMAKE_BUILD_TYPE=` Pick from Release, RelWithDebInfo, Debug, or sometimes more.
-* `-DCMAKE_INSTALL_PREFIX=` The location to install to. System install on UNIX would often be `/usr/local` (the default), user directories are often `~/.local`, or you can pick a folder.
-* `-DBUILD_SHARED_LIBS=` You can set this `ON` or `OFF` to control the default for shared libraries (the author can pick one vs. the other explicitly instead of using the default, though)
-* `-DBUILD_TESTING=` This is a common name for enabling tests, not all packages use it, though, sometimes with good reason.
+- `-DCMAKE_BUILD_TYPE=` Pick from Release, RelWithDebInfo, Debug, or sometimes more.
+- `-DCMAKE_INSTALL_PREFIX=` The location to install to. System install on UNIX would often be `/usr/local` (the default), user directories are often `~/.local`, or you can pick a folder.
+- `-DBUILD_SHARED_LIBS=` You can set this `ON` or `OFF` to control the default for shared libraries (the author can pick one vs. the other explicitly instead of using the default, though)
+- `-DBUILD_TESTING=` This is a common name for enabling tests, not all packages use it, though, sometimes with good reason.
 
 ## Debugging your CMake files
 

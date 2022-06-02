@@ -2,18 +2,13 @@
 
 To add MPI, like OpenMP, you'll be best off with CMake 3.9+.
 
-
-
 ```cmake
 find_package(MPI REQUIRED)
 message(STATUS "Run: ${MPIEXEC} ${MPIEXEC_NUMPROC_FLAG} ${MPIEXEC_MAX_NUMPROCS} ${MPIEXEC_PREFLAGS} EXECUTABLE ${MPIEXEC_POSTFLAGS} ARGS")
 target_link_libraries(MyTarget PUBLIC MPI::MPI_CXX)
 ```
 
-
-
 However, you can imitate this on CMake 3.1+ with:
-
 
 ```cmake
 find_package(MPI REQUIRED)

@@ -30,7 +30,6 @@ cmake_print_properties(
 )
 ```
 
-
 ### Tracing a run
 
 Have you wanted to watch exactly what happens in your CMake file, and when? The `--trace-source="filename"` feature is fantastic. Every line run in the file that you give will be echoed to the screen when it is run, letting you follow exactly what is happening. There are related options as well, but they tend to bury you in output.
@@ -42,7 +41,6 @@ cmake -S . -B build --trace-source=CMakeLists.txt
 ```
 
 If you add `--trace-expand`, the variables will be expanded into their values.
-
 
 ## Building in debug mode
 

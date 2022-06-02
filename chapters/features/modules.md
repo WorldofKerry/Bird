@@ -31,10 +31,8 @@ Note that `BUILD_TESTING` is a better way to check for testing being enabled if 
 
 ## «module:CMakePrintHelpers»
 
-
 This module has a couple of handy output functions. `cmake_print_properties` lets you easily print properties.
 And `cmake_print_variables` will print the names and values of any variables you give it.
-
 
 ## «module:CheckCXXCompilerFlag»
 

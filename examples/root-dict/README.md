@@ -5,6 +5,7 @@ ROOT suggested flags, we will manually add threading via `find_package`, which i
 important flag in the list on most systems.
 
 #### examples/root-dict/CMakeLists.txt
+
 [import:'main', lang:'cmake'](CMakeLists.txt)
 
 ## Supporting files
@@ -12,14 +13,17 @@ important flag in the list on most systems.
 This is just a simple-as-possible class definition, with one method:
 
 #### examples/root-dict/DictExample.cxx
+
 [import, lang:'c_cpp'](DictExample.cxx)
 
 #### examples/root-dict/DictExample.h
+
 [import, lang:'c_cpp'](DictExample.h)
 
 We need a `LinkDef.h`, as well.
 
 #### examples/root-dict/DictLinkDef.h
+
 [import, lang:'c_cpp'](DictLinkDef.h)
 
 ## Testing it
@@ -27,4 +31,5 @@ We need a `LinkDef.h`, as well.
 This is an example of a macro that tests the correct generation from the files listed above.
 
 #### examples/root-dict/CheckLoad.C
+
 [import, lang:'c_cpp'](CheckLoad.C)

@@ -2,11 +2,11 @@ This is an example project using CMake.
 
 The requirements are:
 
-* CMake 3.11 or better; 3.14+ highly recommended.
-* A C++17 compatible compiler
-* The Boost libararies (header only part is fine)
-* Git
-* Doxygen (optional)
+- CMake 3.11 or better; 3.14+ highly recommended.
+- A C++17 compatible compiler
+- The Boost libararies (header only part is fine)
+- Git
+- Doxygen (optional)
 
 To configure:
 

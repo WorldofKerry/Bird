@@ -1,6 +1,5 @@
 # Introduction to the basics
 
-
 ## Minimum Version
 
 Here's the first line of every `CMakeLists.txt`, which is the required name of
@@ -18,8 +17,7 @@ this book, just click on the command name to see the official documentation,
 and use the dropdown to switch documentation between CMake versions.
 
 This line is special! [^2] The version of CMake will also dictate the policies,
-which define behavior changes. So, if you set `minimum_required` to `VERSION
-2.8`, you'll get the wrong linking behavior on macOS, for example, even in the
+which define behavior changes. So, if you set `minimum_required` to `VERSION 2.8`, you'll get the wrong linking behavior on macOS, for example, even in the
 newest CMake versions. If you set it to 3.3 or less, you'll get the wrong
 hidden symbols behaviour, etc. A list of policies and versions is available at
 «cmake:policies».
@@ -63,13 +61,11 @@ else()
 endif()
 ```
 
-
 {% hint style='info' %}
 If you really need to set to a low value here, you can use
 «command:`cmake_policy`» to conditionally increase the policy level or set a
 specific policy. Please at least do this for your macOS users!
 {% endhint %}
-
 
 ## Setting a project
 
@@ -110,7 +106,6 @@ add_executable(one two.cpp three.h)
 
 There are several things to unpack here. `one` is both the name of the executable file generated, and the name of the CMake target created (you'll hear a lot more about targets soon, I promise). The source file list comes next, and you can list as many as you'd like. CMake is smart, and will only compile source file extensions. The headers will be, for most intents and purposes, ignored; the only reason to list them is to get them to show up in IDEs. Targets show up as folders in many IDEs. More about the general build system and targets is available at «cmake:buildsystem».
 
-
 ## Making a library
 
 Making a library is done with «command:`add_library`», and is just about as simple:
@@ -133,7 +128,7 @@ Now we've specified a target, how do we add information about it? For example, m
 target_include_directories(one PUBLIC include)
 ```
 
-«command:`target_include_directories» adds an include directory to a target. `PUBLIC` doesn't mean much for an executable; for a library it lets CMake know that any targets that link to this target must also need that include directory. Other options are `PRIVATE` (only affect the current target, not dependencies), and `INTERFACE` (only needed for dependencies).
+«command:`target_include_directories» adds an include directory to a target. `PUBLIC`doesn't mean much for an executable; for a library it lets CMake know that any targets that link to this target must also need that include directory. Other options are`PRIVATE`(only affect the current target, not dependencies), and`INTERFACE` (only needed for dependencies).
 
 We can then chain targets:
 
@@ -147,7 +142,6 @@ target_link_libraries(another PUBLIC one)
 Focus on using targets everywhere, and keywords everywhere, and you'll be fine.
 
 Targets can have include directories, linked libraries (or linked targets), compile options, compile definitions, compile features (see the C++11 chapter), and more. As you'll see in the two including projects chapters, you can often get targets (and always make targets) to represent all the libraries you use. Even things that are not true libraries, like OpenMP, can be represented with targets. This is why Modern CMake is great!
-
 
 ## Dive in
 
@@ -167,9 +161,6 @@ target_link_libraries(calc PUBLIC calclib)
 
 ```
 
-
 [^1]: In this book, I'll mostly avoid showing you the wrong way to do things; you can find plenty of examples of that online. I'll mention alternatives occasionally, but these are not recommended unless they are absolutely necessary; often they are just there to help you read older CMake code.
-
 [^2]: You will sometimes see `FATAL_ERROR` here, that was needed to support nice failures when running this in CMake <2.6, which should not be a problem anymore.
-
 [^3]: The `::` syntax was originally intended for `INTERFACE IMPORTED` libraries, which were explicitly supposed to be libraries defined outside the current project. But, because of this, most of the `target_*` commands don't work on `IMPORTED` libraries, making them hard to set up yourself. So don't use the `IMPORTED` keyword for now, and use an `ALIAS` target instead; it will be fine until you start exporting targets. This limitation was fixed in CMake 3.11.

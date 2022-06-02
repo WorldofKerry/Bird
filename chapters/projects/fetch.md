@@ -4,9 +4,9 @@ Often, you would like to do your download of data or packages as part of the con
 
 The [FetchContent] module has excellent documentation that I won't try to repeat. The key ideas are:
 
-* Use `FetchContent_Declare(MyName)` to get data or a package. You can set URLs, Git repositories, and more.
-* Use `FetchContent_GetProperties(MyName)` on the name you picked in the first step to get `MyName_*` variables.
-* Check `MyName_POPULATED`, and if not populated, use `FetchContent_Populate(MyName)` (and if a package, `add_subdirectory("${MyName_SOURCE_DIR}" "${MyName_BINARY_DIR}")`)
+- Use `FetchContent_Declare(MyName)` to get data or a package. You can set URLs, Git repositories, and more.
+- Use `FetchContent_GetProperties(MyName)` on the name you picked in the first step to get `MyName_*` variables.
+- Check `MyName_POPULATED`, and if not populated, use `FetchContent_Populate(MyName)` (and if a package, `add_subdirectory("${MyName_SOURCE_DIR}" "${MyName_BINARY_DIR}")`)
 
 For example, to download Catch2:
 
@@ -50,4 +50,4 @@ Now you have the CMake 3.14+ syntax in CMake 3.11+.
 
 See the example [here](https://gitlab.com/CLIUtils/modern-cmake/-/tree/master/examples/fetch).
 
-[FetchContent]: https://cmake.org/cmake/help/latest/module/FetchContent.html
+[fetchcontent]: https://cmake.org/cmake/help/latest/module/FetchContent.html

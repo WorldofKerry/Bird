@@ -25,10 +25,9 @@ endif()
 
 There are a variety of keywords as well, such as:
 
-* Unary: `NOT`, `TARGET`, `EXISTS` (file), `DEFINED`, etc.
-* Binary: `STREQUAL`, `AND`, `OR`, `MATCHES` (regular expression), `VERSION_LESS`, `VERSION_LESS_EQUAL` (CMake 3.7+), etc.
-* Parentheses can be used to group
-
+- Unary: `NOT`, `TARGET`, `EXISTS` (file), `DEFINED`, etc.
+- Binary: `STREQUAL`, `AND`, `OR`, `MATCHES` (regular expression), `VERSION_LESS`, `VERSION_LESS_EQUAL` (CMake 3.7+), etc.
+- Parentheses can be used to group
 
 ## «cmake:generator-expressions»
 
@@ -48,9 +47,9 @@ This is a newer, better way to add things than using specialized `*_DEBUG` varia
 
 Other common uses for generator expressions:
 
-* Limiting an item to a certain language only, such as CXX, to avoid it mixing with something like CUDA, or wrapping it so that it is different depending on target language.
-* Accessing configuration dependent properties, like target file location.
-* Giving a different location for build and install directories.
+- Limiting an item to a certain language only, such as CXX, to avoid it mixing with something like CUDA, or wrapping it so that it is different depending on target language.
+- Accessing configuration dependent properties, like target file location.
+- Giving a different location for build and install directories.
 
 That last one is very common. You'll see something like this in almost every package that supports installing:
 
@@ -118,7 +117,6 @@ COMPLEX_PREFIX_MULTI_VALUES = "some;other;values"
 ```
 
 If you look at the official page, you'll see a slightly different method using set to avoid explicitly writing the semicolons in the list; feel free to use the structure you like best. You can mix it with the positional arguments listed above; any remaining arguments (therefore optional positional arguments) are in `COMPLEX_PREFIX_UNPARSED_ARGUMENTS`.
-
 
 [^1]: They act as if they are evaluated at build/install time, though actually they are evaluated for each build configuration.
 [^2]: The CMake docs splits expressions into Informational, Logical, and Output.

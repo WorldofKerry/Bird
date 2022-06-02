@@ -24,7 +24,6 @@ endif()
 I would recommend using something like `PROJECT_NAME STREQUAL CMAKE_PROJECT_NAME` to set the default for the `PACKAGE_TESTS` option, since this should only build by default if this is the current project.
 As mentioned before, you have to do the `enable_testing` in your main CMakeLists.
 
-
 Now, in your tests directory:
 
 ```cmake
@@ -75,7 +74,7 @@ package_add_test(test1 test1.cpp)
 ```
 
 This will allow you to quickly and simply add tests. Feel free to adjust to suit your needs. If you haven't seen it before, `ARGN` is "every argument after the listed ones".
-Modify the macro to meet your needs.  For example, if you're testing libraries and need to link in different libraries for different tests, you might use this:
+Modify the macro to meet your needs. For example, if you're testing libraries and need to link in different libraries for different tests, you might use this:
 
 ```cmake
 macro(package_add_test_with_libraries TESTNAME FILES LIBRARIES TEST_WORKING_DIRECTORY)
@@ -91,10 +90,9 @@ endmacro()
 package_add_test_with_libraries(test1 test1.cpp lib_to_test "${PROJECT_DIR}/european-test-data/")
 ```
 
-
 ## Download method
 
-You can use the downloader in my [CMake helper repository][CLIUtils/cmake], using CMake's `include` command.
+You can use the downloader in my [CMake helper repository][cliutils/cmake], using CMake's `include` command.
 
 This is a downloader for [GoogleTest], based on the excellent [DownloadProject] tool. Downloading a copy for each project is the recommended way to use GoogleTest (so much so, in fact, that they have disabled the automatic CMake install target), so this respects that design decision. This method downloads the project at configure time, so that IDEs correctly find the libraries. Using it is simple:
 
@@ -111,6 +109,7 @@ add_gtest(SimpleTest)
 ```
 
 > Note: `add_gtest` is just a macro that adds `gtest`, `gmock`, and `gtest_main`, and then runs `add_test` to create a test with the same name:
+>
 > ```cmake
 > target_link_libraries(SimpleTest gtest gmock gtest_main)
 > add_test(SimpleTest SimpleTest)
@@ -138,7 +137,6 @@ endif()
 
 [^1]: Here I've assumed that you are working on a GitHub repository by using the relative path to googletest.
 
-
-[CLIUtils/cmake]:  https://github.com/CLIUtils/cmake
-[GoogleTest]:      https://github.com/google/googletest
-[DownloadProject]: https://github.com/Crascit/DownloadProject
+[cliutils/cmake]: https://github.com/CLIUtils/cmake
+[googletest]: https://github.com/google/googletest
+[downloadproject]: https://github.com/Crascit/DownloadProject

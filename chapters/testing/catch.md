@@ -1,6 +1,5 @@
 # Catch
 
-
 [Catch2] (C++11 only version) is a powerful, idomatic testing solutions similar in philosophy to PyTest for Python. It supports a wider range of compilers than GTest, and is quick to support new things, like M1 builds on macOS. It also has a smaller but faster twin, [doctest](https://github.com/onqtam/doctest), which is quick to compile but misses features like matchers. To use Catch in a CMake project, there are several options.
 
 ## Configure methods
@@ -46,11 +45,10 @@ set_property(Catch2::Catch PROPERTY INTERFACE_INCLUDE_DIRECTORIES "${CATCH_INCLU
 
 Then, you would link to Catch2::Catch. This would have been okay as an INTERFACE target since you won't be exporting your tests.
 
-
 ## Direct inclusion
 
 If you add the library using ExternalProject, FetchContent, or git submodules, you can also `add_subdirectory` Catch (CMake 3.1+).
 
 Catch also provides two CMake modules that you can use to register the individual tests with CMake.
 
-[Catch2]: https://github.com/catchorg/Catch2
+[catch2]: https://github.com/catchorg/Catch2

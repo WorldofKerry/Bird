@@ -20,7 +20,6 @@ add_library(MyLib::MyLib ALIAS MyLib)
 
 to standardise the usage across all methods. This ALIAS target will not be exported below.
 
-
 ## Exporting
 
 The third way is `*Config.cmake` scripts; that will be the topic of the next chapter in this session.

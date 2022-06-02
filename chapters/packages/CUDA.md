@@ -1,9 +1,8 @@
 # CUDA
 
-CUDA support is available in two flavors. The new method, introduced in CMake 3.8 (3.9 for Windows), should be strongly preferred over the old, hacky method - I only mention the old method due to the high chances of an old package somewhere having it. Unlike the older languages, CUDA support has been rapidly evolving, and building CUDA is hard, so I would recommend you *require a very recent version* of CMake! CMake 3.17 and 3.18 have a lot of improvements directly targeting CUDA.
+CUDA support is available in two flavors. The new method, introduced in CMake 3.8 (3.9 for Windows), should be strongly preferred over the old, hacky method - I only mention the old method due to the high chances of an old package somewhere having it. Unlike the older languages, CUDA support has been rapidly evolving, and building CUDA is hard, so I would recommend you _require a very recent version_ of CMake! CMake 3.17 and 3.18 have a lot of improvements directly targeting CUDA.
 
 A good resource for CUDA and Modern CMake is [this talk](http://on-demand.gputechconf.com/gtc/2017/presentation/S7438-robert-maynard-build-systems-combining-cuda-and-machine-learning.pdf) by CMake developer Robert Maynard at GTC 2017.
-
 
 ## Adding the CUDA Language
 
@@ -31,7 +30,7 @@ You can see if CUDA is present by checking `CMAKE_CUDA_COMPILER` (was missing
 until CMake 3.11).
 
 You can check variables like `CMAKE_CUDA_COMPILER_ID` (for nvcc, this is
-`"NVIDIA"`, Clang was added in CMake 3.18).  You can check the version with
+`"NVIDIA"`, Clang was added in CMake 3.18). You can check the version with
 `CMAKE_CUDA_COMPILER_VERSION`.
 
 ## Variables for CUDA
@@ -52,7 +51,7 @@ you are already used to from the `cxx` versions.
 
 ### Adding a library / executable
 
-This is the easy part; as long as you use `.cu` for CUDA files, you can just add libraries *exactly like you normally would*.
+This is the easy part; as long as you use `.cu` for CUDA files, you can just add libraries _exactly like you normally would_.
 
 You can also use separable compilation:
 
@@ -97,8 +96,8 @@ endfunction()
 
 ### Useful variables
 
-* `CMAKE_CUDA_TOOLKIT_INCLUDE_DIRECTORIES`: Place for built-in Thrust, etc
-* `CMAKE_CUDA_COMPILER`: NVCC with location
+- `CMAKE_CUDA_TOOLKIT_INCLUDE_DIRECTORIES`: Place for built-in Thrust, etc
+- `CMAKE_CUDA_COMPILER`: NVCC with location
 
 You can use
 [`FindCUDAToolkit`](https://cmake.org/cmake/help/git-stage/module/FindCUDAToolkit.html)
@@ -107,9 +106,9 @@ CUDA language.
 
 > ### Note that FindCUDA is deprecated, but for for versions of CMake < 3.18, the following functions required FindCUDA:
 >
-> * CUDA version checks / picking a version
-> * Architecture detection (Note: 3.12 fixes this partially)
-> * Linking to CUDA libraries from non-.cu files
+> - CUDA version checks / picking a version
+> - Architecture detection (Note: 3.12 fixes this partially)
+> - Linking to CUDA libraries from non-.cu files
 
 ## Classic FindCUDA [WARNING: DO NOT USE] (for reference only)
 
