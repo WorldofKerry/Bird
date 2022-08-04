@@ -34,7 +34,7 @@ Windows users, who also usually have a very recent version of CMake.
 This is what new projects should do:
 
 ```cmake
-cmake_minimum_required(VERSION 3.7...3.23)
+cmake_minimum_required(VERSION 3.7...3.24)
 
 if(${CMAKE_VERSION} VERSION_LESS 3.12)
     cmake_policy(VERSION ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION})
@@ -54,10 +54,10 @@ you will want to do this instead:
 ```cmake
 cmake_minimum_required(VERSION 3.7)
 
-if(${CMAKE_VERSION} VERSION_LESS 3.23)
+if(${CMAKE_VERSION} VERSION_LESS 3.24)
     cmake_policy(VERSION ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION})
 else()
-    cmake_policy(VERSION 3.23)
+    cmake_policy(VERSION 3.24)
 endif()
 ```
 
