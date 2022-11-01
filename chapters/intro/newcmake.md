@@ -385,15 +385,15 @@ couple of compilers were added.
 - `IMPORTED_NO_SYSTEM`, a new property to forcibly remove SYSTEM from a target.
 - `FindGTest` now adds a `GMock` target if found.
 
-## [CMake 3.24][cmake master]: WIP
+## [CMake 3.24][]: Package Finder
 
-The next release is shaping up to be a fantastic release. Package writers are
-getting integration between `find_package` and `FetchContent` that will allow
-"download if missing" workflows, and is configurable by packagers. Similarly,
-warnings as errors can be set by a package and removed by packagers, as well
-(still make sure not to do this unless you are being build as the main
-project!).
+This is a fantastic release. Package writers are getting integration between
+`find_package` and `FetchContent` that will allow "download if missing"
+workflows, and is configurable by packagers. Similarly, warnings as errors can
+be set by a package and removed by packagers, as well (still make sure not to
+do this unless you are being build as the main project!).
 
+- Initially released [August 4, 2022](https://blog.kitware.com/cmake-3-24-0-available-for-download/)
 - `--fresh` option removes the old cache when running.
 - `find_package` and `FetchContent` now have integration - you have options to download missing dependencies.
 - `find_package` has a new `GLOBAL` option.
@@ -406,6 +406,14 @@ project!).
 - `SYSTEM` includes now are respected on MSVC generators.
 - Better support for MSVC, XCode, and others.
 - `LLVMFlang` compiler support.
+
+## [CMake 3.25][cmake master]: WIP
+
+- C++26 support
+- LTO for CUDA with nvcc
+- Workflow presets added
+- `SYSTEM` added to `add_subdirectory`, `FetchContent`, and as a directory property
+- `BSD` & `LINUX` variables added
 
 [releases]: https://cmake.org/cmake/help/latest/release/index.html
 [cmake 3.0]: https://cmake.org/cmake/help/latest/release/3.0.html
@@ -432,5 +440,6 @@ project!).
 [cmake 3.21]: https://cmake.org/cmake/help/latest/release/3.21.html
 [cmake 3.22]: https://cmake.org/cmake/help/latest/release/3.22.html
 [cmake 3.23]: https://cmake.org/cmake/help/latest/release/3.23.html
+[cmake 3.24]: https://cmake.org/cmake/help/latest/release/3.24.html
 [cmake master]: https://cmake.org/cmake/help/git-master/release/index.html
 [fastercmake]: https://blog.kitware.com/improving-cmakes-runtime-performance/
