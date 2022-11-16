@@ -371,7 +371,7 @@ debugging features, and the ability to force all links to be to targets.
 Presets can include other files. CUDA and C# received new updates, and a
 couple of compilers were added.
 
-- Initially released [March 29, 2022](https://blog.kitware.com/cmake-3-23-0-available-for-download/)
+- Initially released [March 29, 2022](https://blog.kitware.com/cmake-3-23-0-is-available-for-download/)
 - CMake presets are a bit nicer, with the ability to include other files.
 - A couple of new supported compilers, and better C# support.
 - `FILE_SET` for `install` and `target_sources` header-only source files.
@@ -393,7 +393,7 @@ workflows, and is configurable by packagers. Similarly, warnings as errors can
 be set by a package and removed by packagers, as well (still make sure not to
 do this unless you are being build as the main project!).
 
-- Initially released [August 4, 2022](https://blog.kitware.com/cmake-3-24-0-available-for-download/)
+- Initially released [August 4, 2022](https://blog.kitware.com/cmake-3-24-0-is-available-for-download/)
 - `--fresh` option removes the old cache when running.
 - `find_package` and `FetchContent` now have integration - you have options to download missing dependencies.
 - `find_package` has a new `GLOBAL` option.
@@ -407,13 +407,26 @@ do this unless you are being build as the main project!).
 - Better support for MSVC, XCode, and others.
 - `LLVMFlang` compiler support.
 
-## [CMake 3.25][cmake master]: WIP
+## [CMake 3.25][cmake master]: Blocks and SYSTEM
+
+CMake has new block scoping commands selectively controlling variables and
+policies. It also has a lot more control over SYSTEM. The functional features
+of CMake introduced a few releases ago are now usable in `find_` commands with
+`VALIDATOR`. Workflows got an upgrade, too.
 
 - C++26 support
 - LTO for CUDA with nvcc
-- Workflow presets added
+- Workflow presets added, package presets too.
 - `SYSTEM` added to `add_subdirectory`, `FetchContent`, and as a directory property
+- `block()`/`endblock()` for policy/variable scopes, also `PROPOGATE` in `return()`
 - `BSD` & `LINUX` variables added
+- `VALIDATOR` function for `find_*` commands.
+- Several improvements to `try_*` commands.
+- `SYSTEM` target/directory property and `EXPORT_NO_SYSTEM` added, also for FetchContent.
+
+-## [CMake in development][cmake master]: WIP
+
+- FindPython generates the correct PyPy SOABI (finally!)
 
 [releases]: https://cmake.org/cmake/help/latest/release/index.html
 [cmake 3.0]: https://cmake.org/cmake/help/latest/release/3.0.html
@@ -441,5 +454,6 @@ do this unless you are being build as the main project!).
 [cmake 3.22]: https://cmake.org/cmake/help/latest/release/3.22.html
 [cmake 3.23]: https://cmake.org/cmake/help/latest/release/3.23.html
 [cmake 3.24]: https://cmake.org/cmake/help/latest/release/3.24.html
+[cmake 3.25]: https://cmake.org/cmake/help/latest/release/3.25.html
 [cmake master]: https://cmake.org/cmake/help/git-master/release/index.html
 [fastercmake]: https://blog.kitware.com/improving-cmakes-runtime-performance/
