@@ -407,13 +407,14 @@ do this unless you are being build as the main project!).
 - Better support for MSVC, XCode, and others.
 - `LLVMFlang` compiler support.
 
-## [CMake 3.25][cmake master]: Blocks and SYSTEM
+## [CMake 3.25][]: Blocks and SYSTEM
 
 CMake has new block scoping commands selectively controlling variables and
 policies. It also has a lot more control over SYSTEM. The functional features
 of CMake introduced a few releases ago are now usable in `find_` commands with
 `VALIDATOR`. Workflows got an upgrade, too.
 
+- Initially released [November 16, 2022](https://www.kitware.com/cmake-3-25-0-available-for-download/)
 - C++26 support
 - LTO for CUDA with nvcc
 - Workflow presets added, package presets too.
@@ -424,7 +425,7 @@ of CMake introduced a few releases ago are now usable in `find_` commands with
 - Several improvements to `try_*` commands.
 - `SYSTEM` target/directory property and `EXPORT_NO_SYSTEM` added, also for FetchContent.
 
--## [CMake in development][cmake master]: WIP
+## [CMake in development][cmake master]: WIP
 
 - FindPython generates the correct PyPy SOABI (finally!)
 
