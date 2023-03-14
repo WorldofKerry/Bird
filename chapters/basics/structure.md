@@ -12,7 +12,7 @@ First, this is what your files should look like when you start if your project i
 - project
   - .gitignore
   - README.md
-  - LICENCE.md
+  - LICENSE.md
   - CMakeLists.txt
   - cmake
     - FindSomeLib.cmake
