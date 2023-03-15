@@ -4,7 +4,25 @@ This is an abbreviated version of the CMake changelog with just the highlights f
 
 ## [CMake in development][cmake master]: WIP
 
+- FindCUDA fully deprecated, use CUDA language and FindCUDAToolkit
+- C++ Modules extensions (`.ccm`, ` .cxxm``,  `.c++m`) are treated as C++
+
+## [CMake 3.26][]: Logging & Python
+
+Two important additions for FindPython, PyPy SOABI support & LimitedAPI/StableABI support, really enhance FindPython's use. There are quite
+a few nice fixes and new warnings, such as if you reverse the order of `project()` and `cmake_minimium_required()`. Logging has been moved
+from `CMakeOutput.log` and `CMakeError.log` to a new `CMakeConfigureLog.yaml` log.
+
+- Initially released [March 14, 2023](https://www.kitware.com/cmake-3-26-0-available-for-download/)
 - FindPython generates the correct PyPy SOABI (finally!)
+- FindPython supports LimitedAPI/StableABI with a new flag.
+- CMake has a new YAML log of configure time checks in the output directory (also `message(CONFIGURE_LOG ...)`).
+- `ASM_MARMASM` language added for Microsoft ARM assembler.
+- `CMAKE_VS_VERSION_BUILD_NUMBER` added for the VS version number.
+- `USE_FOLDERS` is on by default
+- `"<LANG>_CLANG_TIDY_EXPORT_FIXES_DIR"` for clang-tidy suggested fix output.
+- CMake's copy CLI tool supports updates only if different
+- `target_compile_options` now come after `target_compile_features` / `CMAKE_<LANG>_STANDARD`
 
 ## [CMake 3.25][]: Blocks and SYSTEM
 
@@ -23,7 +41,6 @@ of CMake introduced a few releases ago are now usable in `find_` commands with
 - `VALIDATOR` function for `find_*` commands.
 - Several improvements to `try_*` commands.
 - `SYSTEM` target/directory property and `EXPORT_NO_SYSTEM` added, also for FetchContent.
-
 
 ## [CMake 3.24][]: Package Finder
 
@@ -46,7 +63,6 @@ do this unless you are being build as the main project!).
 - `SYSTEM` includes now are respected on MSVC generators.
 - Better support for MSVC, XCode, and others.
 - `LLVMFlang` compiler support.
-
 
 ## [CMake 3.23][]: Header only libraries
 
@@ -73,7 +89,6 @@ couple of compilers were added.
 - `IMPORTED_NO_SYSTEM`, a new property to forcibly remove SYSTEM from a target.
 - `FindGTest` now adds a `GMock` target if found.
 
-
 ## [CMake 3.22][]: Handy env vars
 
 A smaller release with some nice improvements all around focused on supporting
@@ -91,7 +106,6 @@ information.
 - `CMakeDependentOption` uses normal conditional syntax now
 - CTest can now modify environment variables
 - Some generators now use external (system) markers on includes for MSVC
-
 
 ## [CMake 3.21][] : Colors
 
@@ -113,7 +127,6 @@ support. Presets continue to be improved.
 - `PROJECT_IS_TOP_LEVEL` and `<PROJECT-NAME>_IS_TOP_LEVEL` finally added
 - Caching improvements for the `find_` commands
 
-
 ## [CMake 3.20][] : Docs
 
 The CMake docs received a major boost in productivity by adding "new in" tags
@@ -133,7 +146,6 @@ continue to be improved.
 - More features for the `file(GENERATE` command
 - Several removals, like `cmake-server`, `WriteCompilerDetectionHeader` (if policy set to 3.20+), and a few things that have newer methods now.
 - Source files must include the extension
-
 
 ## [CMake 3.19][] : Presets
 
@@ -159,7 +171,6 @@ for permissions. Further support for generator expressions in more places.
 - FindPython: `Python*_LINK_OPTIONS` added
 - `compute-sanitizer` for ctest now supports CUDA for memcheck
 
-
 ## [CMake 3.18][] : CUDA with Clang & CMake macro language
 
 CUDA now supports Clang (without separable compilation). A new
@@ -184,7 +195,6 @@ features and papercut fixes are sprinkled throughout, a small selection is below
 - New `LINK_LANGUAGE` generator expressions (`DEVICE`/`HOST` versions too)
 - Source can be a subdirectory for `FetchContent`
 
-
 ## [CMake 3.17][] : More CUDA
 
 A FindCUDAToolkit was finally added, which allows finding and using the CUDA
@@ -205,7 +215,6 @@ as well, like FindPython. Finally, you can now iterate over multiple lists at a 
 - Several new environment variables
 - foreach can now do `ZIP_LISTS` (multiple lists at a time)
 
-
 ## [CMake 3.16][] : Unity builds
 
 A new unity build mode was added, allowing source files to be merged into a single build file. Support for
@@ -220,7 +229,6 @@ fixes were implemented, especially to newer features, such as to FindPython, Fin
 - Several new features to control RPath.
 - Generator expressions work in more places, like build and install paths
 - Find locations can now be explicitly controlled through new variables
-
 
 ## [CMake 3.15][] : CLI upgrade
 
@@ -238,7 +246,6 @@ module. `export(PACKAGE)` has drastically changed; it now no longer touches `$HO
 - Several Ninja improvements, include SWIFT language support
 - Compiler and list improvements to generator expressions
 
-
 ## [CMake 3.14][] : File utilities (AKA [CMake π](https://blog.kitware.com/kitware-gets-mathematical-with-cmake-π-on-pi-day/))
 
 This release has lots of small cleanups, including several utilities for files. Generator expressions work in a few more places, and list handling is better with empty variables.
@@ -251,7 +258,6 @@ Quite a few more find packages produce targets. The new Visual Studio 16 2019 ge
 - You can see if a variable is defined in the CACHE with `DEFINED CACHE{VAR}` in an «command:if» statement.
 - `BUILD_RPATH_USE_ORIGIN` and CMake version were added to improve handling of RPath in the build directory.
 - The CMake server mode is now being replaced with a file API, starting in this release. Will affect IDEs in the long run.
-
 
 ## [CMake 3.13][] : Linking control
 
@@ -271,7 +277,6 @@ of the source directory, for better file separation. And, `target_sources` _fina
 - `STATIC_LIBRARY_OPTIONS` property added
 - `target_sources` is now relative to the current source directory (CMP0076)
 - If you use Xcode, you now can experimentally set schema fields
-
 
 ## [CMake 3.12][] : Version ranges and CONFIGURE_DEPENDS
 
@@ -296,7 +301,6 @@ shiny new Python find module (2 and 3 versions too), and many more.
 - Several new properties and property initializers
 - CPack finally reads `CMAKE_PROJECT_VERSION` variables
 
-
 ## [CMake 3.11][] : Faster & IMPORTED INTERFACE
 
 This release is [supposed to be][fastercmake] much faster. You can also finally directly add INTERFACE targets
@@ -308,7 +312,6 @@ to IMPORTED libraries (the internal `Find*.cmake` scripts should become much cle
 - You can now add INTERFACE targets directly to IMPORTED INTERFACE libraries (Wow!)
 - Source file properties have been expanded
 - `FetchContent` module now allows downloads to happen at configure time (Wow)
-
 
 ## [CMake 3.10][] : CppCheck
 
@@ -327,7 +330,6 @@ CMake now is built with C++11 compilers. Lots of useful improvements help write 
 - Dynamic test discovery for `GoogleTest`
 - `cmake_host_system_information` can access much more information.
 
-
 ## [CMake 3.9][] : IPO
 
 Lots of fixes to CUDA support went into this release, including `PTX` support and MSVC generators. Interprocedural Optimizations are now supported properly.
@@ -341,7 +343,6 @@ Even more modules provide imported targets, including MPI.
 - `INTERPROCEDURAL_OPTIMIZATION` enforced (and `CMAKE_*` initializer added, CheckIPOSupported added, Clang and GCC support)
 - New `GoogleTest` module
 - `FindDoxygen` drastically improved
-
 
 ## [CMake 3.8][] : C# & CUDA
 
@@ -358,7 +359,6 @@ This adds CUDA as a language, as well as `cxx_std_11` as a compiler meta-feature
 - `$<IF:cond,true-value,false-value>` added (wow!)
 - `source_group(TREE` added (finally allowing IDEs to reflect the project folder structure!)
 
-
 ## [CMake 3.7][] : Android & CMake Server
 
 You can now cross-compile to Android. Useful new if statement options really help clarify code. And the new server mode was supposed to improve integration with IDEs (but is being replaced by a different system in CMake 3.14+). Support for the VIM editor was also improved.
@@ -372,7 +372,6 @@ You can now cross-compile to Android. Useful new if statement options really hel
 - CMake Server added
 - Added `--trace-source="filename"` to monitor certain files only
 
-
 ## [CMake 3.6][] : Clang-Tidy
 
 This release added Clang-Tidy support, along with more utilities and improvements. It also removed the search of `$PATH` on Unix systems due to problems, instead users should use `$CMAKE_PREFIX_PATH`.
@@ -385,7 +384,6 @@ This release added Clang-Tidy support, along with more utilities and improvement
 - `*_CLANG_TIDY` property added
 - External projects can now be shallow clones, and other improvements
 
-
 ## [CMake 3.5][] : ARM
 
 This release expanded CMake to more platforms, and make warnings easier to control from the command line.
@@ -396,7 +394,6 @@ This release expanded CMake to more platforms, and make warnings easier to contr
 - Boost, GTest, and more now support imported targets
 - ARMCC now supported, better support for iOS
 - XCode backslash fix
-
 
 ## [CMake 3.4][] : Swift & CCache
 
@@ -411,7 +408,6 @@ This release adds lots of useful tools, support for the Swift language, and the 
 - `TARGET_MESSAGES` allow makefiles to print messages after target is completed
 - Imported targets are beginning to show up in the official `Find*.cmake` files
 
-
 ## [CMake 3.3][] : if IN_LIST
 
 This is notable for the useful `IN_LIST` option for if, but it also added better library search using `$PATH` (See CMake 3.6), dependencies for INTERFACE libraries, and several other useful improvements. The addition of a `COMPILE_LANGUAGE` generator expression would prove very useful in the future as more languages are added. Makefiles now produce better output in parallel.
@@ -421,7 +417,6 @@ This is notable for the useful `IN_LIST` option for if, but it also added better
 - `*_INCLUDE_WHAT_YOU_USE` property added
 - `COMPILE_LANGUAGE` generator expression (limited support in some generators)
 
-
 ## [CMake 3.2][] : UTF8
 
 This is a smaller release, with mostly small features and fixes. Internal changes, like better Windows and UTF8 support, were the focus.
@@ -429,7 +424,6 @@ This is a smaller release, with mostly small features and fixes. Internal change
 - Initially released [March 11, 2015](https://blog.kitware.com/cmake-3-2-1-released/)
 - `continue()` inside loops
 - File and directory locks added
-
 
 ## [CMake 3.1][] : C++11 and compile features
 
@@ -440,7 +434,6 @@ This is the first release of CMake to support C++11. Combined with fixes to the 
 - Compile features support
 - Sources can be added later with `target_sources`
 - Better support for generator expressions and INTERFACE targets
-
 
 ## [CMake 3.0][] : Interface libraries
 
@@ -481,5 +474,6 @@ There were a ton of additions to this version of CMake, primarily to fill out th
 [cmake 3.23]: https://cmake.org/cmake/help/latest/release/3.23.html
 [cmake 3.24]: https://cmake.org/cmake/help/latest/release/3.24.html
 [cmake 3.25]: https://cmake.org/cmake/help/latest/release/3.25.html
+[cmake 3.26]: https://cmake.org/cmake/help/latest/release/3.26.html
 [cmake master]: https://cmake.org/cmake/help/git-master/release/index.html
 [fastercmake]: https://blog.kitware.com/improving-cmakes-runtime-performance/
