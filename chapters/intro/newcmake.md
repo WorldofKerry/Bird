@@ -5,7 +5,7 @@ This is an abbreviated version of the CMake changelog with just the highlights f
 ## [CMake in development][cmake master]: WIP
 
 - FindCUDA fully deprecated, use CUDA language and FindCUDAToolkit
-- C++ Modules extensions (`.ccm`, ` .cxxm``,  `.c++m`) are treated as C++
+- C++ Modules extensions (`.ccm`, `.cxxm``, `.c++m`) are treated as C++
 
 ## [CMake 3.26][]: Logging & Python
 

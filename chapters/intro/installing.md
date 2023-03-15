@@ -155,7 +155,7 @@ gitbook $ pip install cmake
 
 And as long as a binary exists for your system, you'll be up-and-running almost immediately. If a binary doesn't exist, it will try to use KitWare's `scikit-build` package to build, and will require an older copy of CMake to build. So only use this system if binaries exist, which is most of the time.
 
-This has the benefit of respecting your current virtual environment, as well. It really shines when placed in a `pyproject.toml` file, however - it will only be installed to build your package, and will not remain afterwords! Fantastic.
+This has the benefit of respecting your current virtual environment, as well. It really shines when placed in a `pyproject.toml` file, however - it will only be installed to build your package, and will not remain afterwards! Fantastic.
 
 This also, of course, works with pipx. So you can even use `pipx run cmake` to run CMake in a disposable virtual environment, without any setup - and this works out-of-the-box on GitHub Actions, since `pipx` is a supported package manager there!
 
