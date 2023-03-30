@@ -81,7 +81,7 @@ There is a boolean target property, `LINK_WHAT_YOU_USE`, that will check for ext
 
 ## Clang-format
 
-Clang-format doesn't really have an integration with CMake, unfortunately. You could make a custom target (See [this post](https://arcanis.me/en/2015/10/17/cppcheck-and-clang-format), or you can run it manually. An interesting project that I have not really tried is [here](https://github.com/kbenzie/git-cmake-format); it adds a format target and even makes sure that you can't commit unformatted files.
+Clang-format doesn't really have an integration with CMake, unfortunately. You could make a custom target (See [this post](https://arcanis.me/en/2015/10/17/cppcheck-and-clang-format)), or you can run it manually. An interesting project that I have not really tried is [here](https://github.com/kbenzie/git-cmake-format); it adds a format target and even makes sure that you can't commit unformatted files.
 
 The following two line would do that in a git repository in bash (assuming you have a `.clang-format` file):
 
