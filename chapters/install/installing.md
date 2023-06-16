@@ -68,3 +68,8 @@ install(FILES "${CMAKE_CURRENT_BINARY_DIR}/MyLibConfig.cmake"
 That's it! Now once you install a package, there will be files in `lib/cmake/MyLib` that CMake will search for (specifically, `MyLibConfig.cmake` and `MyLibConfigVersion.cmake`), and the targets file that config uses should be there as well.
 
 When CMake searches for a package, it will look in the current install prefix and several standard places. You can also add this to your search path manually, including `MyLib_PATH`, and CMake gives the user nice help output if the configure file is not found.
+
+The [CMakePackageConfigHelpers](https://cmake.org/cmake/help/latest/module/CMakePackageConfigHelpers.html) module mentioned above has additional tools to help write a more relocatable `Config.cmake` file.
+Refer to the CMake documentation on [configure_package_config_file](https://cmake.org/cmake/help/latest/module/CMakePackageConfigHelpers.html#command:configure_package_config_file) (used instead of `configure_file`) and the `@PACKAGE_INIT@` substitution string to get
+* a set of automatically defined `PACKAGE_<var>` variables (for relative path versions of `<var>`) and
+* a `set_and_check()` alternative to `set()` to automatically check for path existence.
