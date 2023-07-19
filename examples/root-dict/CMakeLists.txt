@@ -2,7 +2,7 @@
 
 ## [main]
 
-cmake_minimum_required(VERSION 3.4...3.26)
+cmake_minimum_required(VERSION 3.4...3.27)
 
 project(RootDictExample LANGUAGES CXX)
 

@@ -4,15 +4,15 @@ People love to hate build systems.
 Just watch the talks from CppCon17 to see examples of developers making the state of build systems the brunt of jokes.
 This raises the question: Why?
 Certainly there are no shortage of problems when building.
-But I think that, in 2022, we have a very good solution to quite a few of those problems.
+But I think that, in 2023, we have a very good solution to quite a few of those problems.
 It's CMake. Not CMake 2.8 though; that was released before C++11 even existed!
 Nor the horrible examples out there for CMake (even those posted on KitWare's own tutorials list).
-I'm talking about Modern CMake. CMake 3.4+, maybe even CMake 3.26+!
+I'm talking about Modern CMake. CMake 3.5+, maybe even CMake 3.27+!
 It's clean, powerful, and elegant, so you can spend most of your time coding, not adding lines to an unreadable, unmaintainable Make (Or CMake 2) file.
 And CMake 3.11+ is supposed to be significantly faster, as well!
 
 {% hint %}
-Are you interested in using CMake to build Python packages? Read about a [proposal to work on Scikit-build here][skprop], and let me know if you have a science use case!
+Are you interested in using CMake to build Python packages? I'm working on scikit-build-core, [proposal described here][skprop]! Let me know if you have a use case!
 
 [skprop]: https://iscinumpy.gitlab.io/post/scikit-build-proposal/
 

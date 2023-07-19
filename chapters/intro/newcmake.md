@@ -4,8 +4,29 @@ This is an abbreviated version of the CMake changelog with just the highlights f
 
 ## [CMake in development][cmake master]: WIP
 
-- FindCUDA fully deprecated, use CUDA language and FindCUDAToolkit
-- C++ Modules extensions (`.ccm`, `.cxxm``, `.c++m`) are treated as C++
+* `CMAKE_CROSSCOMPILING_EMULATOR` environment variable added.
+* Apple's VisionOS added.
+
+
+## [CMake 3.27][]: Debugger
+
+This release adds the new CMake debugger! This should improve support for
+debugging your CMake code in something like VSCode.  This release also
+"removes" FindPythonLibs/FindPythonInterp/FindCUDA; if the min or max version
+is set to 3.27 or higher, the modules will be missing.
+
+- Initially released [July 19, 2023](https://www.kitware.com/cmake-3-27-0-available-for-download/)
+- C++ Modules extensions (`.ccm`, `.cxxm`, `.c++m`) are treated as C++
+- `COMPILE_ONLY`, `LIST`, and `PATH` generator expressions added, along with a few more specific ones.
+- New `SKIP_LINTING`, as well as more generator expression support in things like `<LANG>_CPPCHECK`, etc.
+- `find_package` now searches for uppercase `<PACKAGENAME>_ROOT` CMake/Environment variables.
+- Added `add_custom_command(... DEPENDS_EXPLICIT_ONLY` & variable for Ninja dependency control.
+- CMake build verbose now prints the working dir and command line used to build.
+- Better support for versions of MSVC.
+- Several new CUDA properties related to targeting .`cubin`/`.fatbin`/`.optixir`.
+- Setting `cmake_minimum_required` less than 3.5 is now deprecated.
+- FindCUDA simi-removed, use CUDA language and FindCUDAToolkit.
+- FindPythonLibs & FindPythonInterp simi-removed, use FindPython.
 
 ## [CMake 3.26][]: Logging & Python
 
@@ -475,5 +496,6 @@ There were a ton of additions to this version of CMake, primarily to fill out th
 [cmake 3.24]: https://cmake.org/cmake/help/latest/release/3.24.html
 [cmake 3.25]: https://cmake.org/cmake/help/latest/release/3.25.html
 [cmake 3.26]: https://cmake.org/cmake/help/latest/release/3.26.html
+[cmake 3.27]: https://cmake.org/cmake/help/latest/release/3.27.html
 [cmake master]: https://cmake.org/cmake/help/git-master/release/index.html
 [fastercmake]: https://blog.kitware.com/improving-cmakes-runtime-performance/

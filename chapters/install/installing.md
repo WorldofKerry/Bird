@@ -71,5 +71,6 @@ When CMake searches for a package, it will look in the current install prefix an
 
 The [CMakePackageConfigHelpers](https://cmake.org/cmake/help/latest/module/CMakePackageConfigHelpers.html) module mentioned above has additional tools to help write a more relocatable `Config.cmake` file.
 Refer to the CMake documentation on [configure_package_config_file](https://cmake.org/cmake/help/latest/module/CMakePackageConfigHelpers.html#command:configure_package_config_file) (used instead of `configure_file`) and the `@PACKAGE_INIT@` substitution string to get
-* a set of automatically defined `PACKAGE_<var>` variables (for relative path versions of `<var>`) and
-* a `set_and_check()` alternative to `set()` to automatically check for path existence.
+
+- a set of automatically defined `PACKAGE_<var>` variables (for relative path versions of `<var>`) and
+- a `set_and_check()` alternative to `set()` to automatically check for path existence.
