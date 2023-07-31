@@ -1,4 +1,6 @@
 #include <modern/lib.hpp>
+#include <modern/display.hpp>
+#include <modern/keyboard.hpp>
 
 #include <tuple>
 #include <vector>
@@ -26,24 +28,6 @@ std::tuple<double, double> accumulate_vector(const std::vector<double> &values)
     return {ba::mean(acc), ba::moment<2>(acc)};
 }
 
-void KeyboardHandler::end()
-{
-    // End ncurses
-    endwin();
-}
-
-void KeyboardHandler::setup()
-{
-    // Initialize ncurses
-    initscr();
-    cbreak();             // Line buffering disabled
-    noecho();             // Don't echo input characters
-    keypad(stdscr, true); // Enable the keypad for arrow keys
-
-    // Print instructions
-    printw("Press the arrow keys. Press 'q' to quit.\n");
-}
-
 const int ANIMATION_DELAY = 100; // Milliseconds delay between frames
 
 void printHappyFace(int position, std::ofstream &file)
@@ -61,28 +45,4 @@ void printHappyFace(int position, std::ofstream &file)
     }
 
     file << std::flush;
-}
-
-Action KeyboardHandler::loop()
-{
-    if (int ch = getch(); ch != 'q')
-    {
-        // Check for arrow keys
-        switch (ch)
-        {
-        case KEY_UP:
-            return Action::UP;
-        case KEY_DOWN:
-            return Action::DONE;
-        case KEY_LEFT:
-            return Action::LEFT;
-        case KEY_RIGHT:
-            return Action::RIGHT;
-        default:
-            printw("Press the arrow keys. Press 'q' to quit.\n");
-            break;
-        }
-    }
-    refresh();
-    return Action::DONE;
 }

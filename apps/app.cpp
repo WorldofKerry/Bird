@@ -34,10 +34,10 @@ int main()
         }
         if (action != Action::DONE)
         {
-            printw("%s %i\n", toString(action), position);
+            printw("%i %i\n", action, position);
             std::ofstream animationFile("animation_output.txt");
             printHappyFace(position, animationFile);
-            // animationFile.close();
+            animationFile.close();
             printw("sleeping");
             // std::this_thread::sleep_for(std::chrono::milliseconds(10));
             printw("done sleep");
