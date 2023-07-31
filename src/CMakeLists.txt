@@ -14,8 +14,13 @@ target_include_directories(modern_library PUBLIC ../include)
 # This depends on (header only) boost
 target_link_libraries(modern_library PRIVATE Boost::boost)
 
+# ncurses
+find_package(Curses REQUIRED)
+include_directories(${CURSES_INCLUDE_DIR})
+target_link_libraries(modern_library PRIVATE ${CURSES_LIBRARIES})
+
 # All users of this library will need at least C++11
-target_compile_features(modern_library PUBLIC cxx_std_11)
+target_compile_features(modern_library PUBLIC cxx_std_20)
 
 # IDEs should put the headers in a nice place
 source_group(
