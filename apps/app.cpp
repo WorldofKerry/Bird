@@ -31,21 +31,21 @@ int main()
         {
         case (Action::RIGHT):
             position += 1;
+            gui.addPipe();
             break;
         case (Action::LEFT):
             position -= 1;
             break;
         }
-        if (action != Action::DONE)
-        {
-            printw("%i %i\n", action, position);
-            std::ofstream animationFile("animation_output.txt");
-            gui.loop(position, animationFile);
-            animationFile.close();
-            printw("sleeping");
-            // std::this_thread::sleep_for(std::chrono::milliseconds(10));
-            printw("done sleep");
-        }
+        // if (action != Action::DONE)
+        // {
+        printw("%i %i\n", action, position);
+        std::ofstream animationFile("animation_output.txt");
+        gui.loop(position, animationFile);
+        animationFile.close();
+        printw("loop\n");
+        // }
+        std::this_thread::sleep_for(std::chrono::milliseconds(10));
     }
 
     return 0;
