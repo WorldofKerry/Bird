@@ -53,3 +53,5 @@ struct KeyboardHandler
     Action loop();
     void end();
 };
+
+void printHappyFace(int position, std::ofstream &file);

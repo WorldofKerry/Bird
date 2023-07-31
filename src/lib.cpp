@@ -3,6 +3,10 @@
 #include <tuple>
 #include <vector>
 #include <algorithm>
+#include <iostream>
+#include <fstream>
+#include <chrono>
+#include <thread>
 #include <ncurses.h>
 
 #include <boost/accumulators/accumulators.hpp>
@@ -40,6 +44,25 @@ void KeyboardHandler::setup()
     printw("Press the arrow keys. Press 'q' to quit.\n");
 }
 
+const int ANIMATION_DELAY = 100; // Milliseconds delay between frames
+
+void printHappyFace(int position, std::ofstream &file)
+{
+    const std::string happy_face[] = {
+        " O  O ",
+        "   _  ",
+        "  \\_/ "};
+
+    for (int i = 0; i < 3; ++i)
+    {
+        for (int j = 0; j < position; ++j)
+            file << ' ';
+        file << happy_face[i] << '\n';
+    }
+
+    file << std::flush;
+}
+
 Action KeyboardHandler::loop()
 {
     if (int ch = getch(); ch != 'q')
@@ -60,5 +83,6 @@ Action KeyboardHandler::loop()
             break;
         }
     }
+    refresh();
     return Action::DONE;
 }
