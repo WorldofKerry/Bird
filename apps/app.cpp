@@ -1,4 +1,6 @@
 #include <modern/lib.hpp>
+#include <modern/keyboard.hpp>
+#include <modern/display.hpp>
 
 #include <fmt/format.h>
 #include <ncurses.h>

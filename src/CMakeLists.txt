@@ -9,6 +9,7 @@ file(GLOB HEADER_LIST CONFIGURE_DEPENDS "${ModernCMakeExample_SOURCE_DIR}/includ
 set (modern_library_src
 lib.cpp
 keyboard.cpp
+display.cpp
 )
 add_library(modern_library ${modern_library_src} ${HEADER_LIST})
 
