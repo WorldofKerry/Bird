@@ -20,6 +20,8 @@ int main()
     auto keyboard = KeyboardHandler();
     keyboard.setup();
 
+    auto gui = Gui(60, 30);
+
     Action action;
     while (1)
     {
@@ -38,7 +40,7 @@ int main()
         {
             printw("%i %i\n", action, position);
             std::ofstream animationFile("animation_output.txt");
-            printHappyFace(position, animationFile);
+            gui.loop(position, animationFile);
             animationFile.close();
             printw("sleeping");
             // std::this_thread::sleep_for(std::chrono::milliseconds(10));

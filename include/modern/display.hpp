@@ -2,4 +2,12 @@
 
 #include <fstream>
 
-void printHappyFace(int, std::ofstream&);
+class Gui
+{
+    int width;
+    int height;
+
+public:
+    Gui(int width, int height) : width(width), height(height) {}
+    void loop(int, std::ofstream &);
+};
