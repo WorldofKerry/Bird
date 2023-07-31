@@ -12,6 +12,7 @@ class Gui
     int curPosition; 
     std::deque<std::deque<char>> canvas;
     char getNextChar(); 
+    const char PIPE_CHAR = '|';
 
 public:
     Gui(int, int);

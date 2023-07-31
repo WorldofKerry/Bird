@@ -39,7 +39,7 @@ int main()
             gui.addPipe();
         else if (c == 'j')
             gui.jump();
-        printf("%d\n", c);
+        // printf("%d\n", c);
 
     } while (c != 'q');
 
