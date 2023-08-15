@@ -8,7 +8,6 @@ file(GLOB HEADER_LIST CONFIGURE_DEPENDS "${ModernCMakeExample_SOURCE_DIR}/includ
 # Make an automatic library - will be static or dynamic based on user setting
 set (modern_library_src
 lib.cpp
-keyboard.cpp
 display.cpp
 )
 add_library(modern_library ${modern_library_src} ${HEADER_LIST})
@@ -17,12 +16,12 @@ add_library(modern_library ${modern_library_src} ${HEADER_LIST})
 target_include_directories(modern_library PUBLIC ../include)
 
 # This depends on (header only) boost
-target_link_libraries(modern_library PRIVATE Boost::boost)
+# target_link_libraries(modern_library PRIVATE Boost::boost)
 
 # ncurses
-find_package(Curses REQUIRED)
-include_directories(${CURSES_INCLUDE_DIR})
-target_link_libraries(modern_library PRIVATE ${CURSES_LIBRARIES})
+# find_package(Curses REQUIRED)
+# include_directories(${CURSES_INCLUDE_DIR})
+# target_link_libraries(modern_library PRIVATE ${CURSES_LIBRARIES})
 
 # All users of this library will need at least C++20
 target_compile_features(modern_library PUBLIC cxx_std_20)
